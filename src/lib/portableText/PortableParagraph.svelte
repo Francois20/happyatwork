@@ -1,0 +1,1 @@
+<p class="py-2 leading-7"><slot /></p>

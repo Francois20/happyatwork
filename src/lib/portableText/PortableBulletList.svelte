@@ -1,0 +1,1 @@
+<ul class="py-4 leading-7 list-disc pl-4 bg-light"><slot /></ul>
