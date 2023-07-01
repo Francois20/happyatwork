@@ -33,7 +33,7 @@
         </div>
       </a>
       <div class="flex flex-col md:px-4">
-        <span class="text-yellow text-sm md:text-lg uppercase font-bold">{lang === 'en-us' ? post.category.title.en : post.category.title.sv}</span>
+        <span class="text-marine opacity-50 text-sm md:text-lg uppercase font-bold">{lang === 'en-us' ? post.category.title.en : post.category.title.sv}</span>
         <h3 class="font-bold text-2xl md:text-3xl mt-4 mb-4">{post.title}</h3>
         <p class="leading-7">{post.summary}</p>
         <a 

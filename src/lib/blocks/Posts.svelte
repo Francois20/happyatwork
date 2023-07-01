@@ -48,7 +48,7 @@
           width={{ mobile: 340, tablet: 300, desktop: 600 }}
         />
       </a>
-      <span class="text-yellow text-xs md:text-sm uppercase font-bold">{lang === 'en-us' ? post.category.title.en : post.category.title.sv}</span>
+      <span class="text-marine opacity-50 text-xs md:text-sm uppercase font-bold">{lang === 'en-us' ? post.category.title.en : post.category.title.sv}</span>
       <span class="font-bold text-2xl mt-2 mb-4">{post.title}</span>
       <span>{post.summary}</span>
       <a href={pageName + '/' + post.seo.slug.current} class="hover:text-blue font-semibold  mt-4 flex items-center gap-1 hover:gap-2 duration-200">

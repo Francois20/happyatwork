@@ -1,13 +1,14 @@
 <script>
 	import ButtonCircle from "../components/ButtonCircle.svelte";
   import { IconSend } from '@tabler/icons-svelte';
+	import Button from "../components/Button.svelte";
 
   export let data;
   const {text1, text2, link} = data;
 </script>
 
 <section class="w-full flex justify-center px-sm-padding md:px-md-padding lg:px-0 my-12 md:my-16">
-  <div class="relative group flex flex-col md:flex-row justify-center items-center bg-yellow h-[90vw] md:h-40 w-[90vw] md:w-max rounded-full md:pr-8 md:pl-0 shadow-xl overflow-hidden">
+  <div class="relative group flex flex-col md:flex-row justify-center items-center bg-yellow h-[90vw] md:h-40 w-[90vw] md:w-max rounded-full md:pr-8 md:pl-0 overflow-hidden">
     <div class="hidden md:block rotate-45 -translate-x-10 translate-y-0.5">
       <IconSend size={240} stroke={0.8} color="#FED568" />
     </div>
@@ -19,7 +20,7 @@
         <span>{text1}</span>
         <span>{text2}</span>
       </div>
-    <ButtonCircle data={link} />
+    <Button data={link} />
     </div>
   </div>
 </section>

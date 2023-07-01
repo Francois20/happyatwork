@@ -12,7 +12,7 @@
   <div class="flex flex-col {reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'}">
     <div class="w-full lg:w-1/2 lg:pr-16">
       {#if tag}
-        <span class="block text-yellow text-base lg:text-xl font-bold w-min leading-5 lg:leading-6 mb-4">{tag}</span>
+        <span class="block text-marine opacity-50 text-base lg:text-xl font-bold w-min leading-5 lg:leading-6 mb-4">{tag}</span>
       {/if}
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 lg:mb-12 uppercase">{title}</h2>
       <PortableText data={text}/>
@@ -30,9 +30,9 @@
     {#each paragraphs as paragraph, i}
       <div class="flex">
         {#if i !== 0 && i !== 3 && i !== 6}
-          <div class="hidden lg:block bg-yellow w-1 min-w-[2px] max-w-[2px] h-full mr-12" />
+          <div class="hidden lg:block border-r border-yellow border-dashed w-1 min-w-[2px] max-w-[2px] h-full mr-12" />
         {/if}
-        <div class={i !== 2 && i !== 5 && i !== 8 && 'lg:mr-12'}>
+        <div class={i !== 2 && i !== 5 && i !== 8 && 'lg:mr-8'}>
           <h3 class="text-xl font-semibold">{paragraph.title}</h3>
           <div>
             <PortableText data={paragraph.text}/>

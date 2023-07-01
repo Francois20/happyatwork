@@ -4,7 +4,13 @@
   import { goto } from '$app/navigation';
 
   export let data;
-  const {logo, links, secondaryLinks, locales, soMeLinks} = data
+  console.log('DARAAA---------->', data);
+  let {locales} = data;
+  $: logo = data.logo
+  $: links = data.links
+  $: secondaryLinks = data.secondaryLinks
+  $: locales = data.locales
+  $: soMeLinks = data.soMeLinks
 
   delete locales._type
   const localesArray = Object.values(locales)

@@ -5,7 +5,7 @@
   const {items} = data
 </script>
 
-<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full">
+<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full pt-20 pb-32">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12">
     {#each items as item, i}
     <div class="flex flex-col">
@@ -28,7 +28,6 @@
       <div class="flex flex-grow flex-col lg:flex-row">
         <p>{item.text}</p>
       </div>
-      <div class=" bg-yellow h-1 min-h-[2px] max-h-[2px] mb-8 w-16 mt-16" />
     </div>
     {/each}
   </div>

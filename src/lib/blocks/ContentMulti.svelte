@@ -13,7 +13,7 @@
       <div class="flex flex-col mb-16 lg:mb-28 {i % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}">
         <div class="w-full lg:w-2/3 mb-8 lg:mb-0 {i % 2 === 0 ? 'lg:ml-24' : 'lg:mr-24'}">
           {#if item.tag}
-            <span class="block text-yellow text-base md:text-lg font-bold mb-2 uppercase">{item.tag}</span>
+            <span class="block text-marine opacity-50 text-base md:text-lg font-bold mb-2 uppercase">{item.tag}</span>
           {/if}
           <h2 class="text-2xl md:text-4xl font-bold mb-4 uppercase xl:max-w-[86%]">{item.title}</h2>
           <PortableText data={item.text} />

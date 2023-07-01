@@ -10,7 +10,7 @@
 <section class="flex flex-col-reverse lg:grid lg:grid-cols-2 px-sm-padding md:px-md-padding xl:px-lg-padding py-12 lg:py-24">
   <div class="mt-16 lg:mt-0 lg:pr-6">
     {#if tag}
-      <span class="block text-yellow text-base lg:text-xl font-bold w-min leading-5 lg:leading-6 mb-4">{tag}</span>
+      <span class="block text-marine opacity-50 text-base lg:text-xl font-bold w-min leading-5 lg:leading-6 mb-4">{tag}</span>
     {/if}
     <h2 class="text-2xl md:text-3xl xl:text-4xl font-bold uppercase mb-4 lg:mb-12">{heading}</h2>
     <PortableText data={text}/>
