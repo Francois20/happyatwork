@@ -4,7 +4,7 @@
   import { goto } from '$app/navigation';
 
   export let data;
-  console.log('DARAAA---------->', data);
+  
   let {locales} = data;
   $: logo = data.logo
   $: links = data.links

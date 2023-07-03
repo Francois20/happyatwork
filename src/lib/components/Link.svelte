@@ -3,7 +3,6 @@
   import { IconChevronRight } from '@tabler/icons-svelte';
 
   export let link
-  console.log(link);
 </script>
 
 <a

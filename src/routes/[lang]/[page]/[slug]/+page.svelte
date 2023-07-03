@@ -10,7 +10,8 @@
 
   export let data;
   const lang = $page.data.page.__i18n_lang
-  const {title, body, category, author, publishedAt, estimatedReadingTime} = data.page;
+  const {title, description, ogTitle, ogDescription, ogImage} = data.page.seo
+  const {body, category, author, publishedAt, estimatedReadingTime} = data.page;
   const {estimatedReadTimeText, returnText, shareText} = $page.data.post
 
   let previousPage = '';
@@ -29,8 +30,12 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+  <title>{title}</title>
+  <meta name="title" content="{title}">
+  <meta name="description" content="{description}">
+  <meta property="og:title" content="{ogTitle}">
+  <meta property="og:description" content="{ogDescription}">
+  <meta property="og:image" content="{ogImage}">
 </svelte:head>
 
 <section class="relative bg-light justify-center flex w-full lg:w-max ml-0 mr-0 pt-28 pb-12 md:pt-40 lg:pt-52 lg:pb-36">
@@ -57,7 +62,7 @@
 
   <article class="w-full lg:w-[1000px] px-sm-padding md:px-md-padding lg:pl-52">
     <span class="block text-yellow text-base lg:text-xl font-bold w-min leading-5 lg:leading-6 mb-4 whitespace-nowrap">{lang === 'en-us' ? category.title.en : category.title.sv}</span>
-    <h1 class="text-3xl lg:text-6xl uppercase font-extrabold mb-6 lg:mb-20 mt-4 lg:mt-6 lg:!leading-[4rem]">{title}</h1>
+    <h1 class="text-3xl lg:text-6xl uppercase font-extrabold mb-6 lg:mb-20 mt-4 lg:mt-6 lg:!leading-[4rem]">{data.page.title}</h1>
     <Author {author} {publishedAt} style="block lg:hidden md:mb-4 lg:mb-0" />
     <PortableText data={body}/>
   </article>
