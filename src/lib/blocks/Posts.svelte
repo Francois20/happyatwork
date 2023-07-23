@@ -31,7 +31,7 @@
 
 </script>
 
-<section class="flex flex-col py-12 md:pt-16 pb-24 px-sm-padding md:px-md-padding xl:px-lg-padding">
+<section class="flex flex-col py-12 md:pt-16 pb-24 px-sm-padding md:px-md-padding xl:px-lg-padding max-w-content">
   <FilterTabs
     items={categories}
     selectedItem={selectedCategory}

@@ -7,7 +7,7 @@
   const {heading, text, image, link, tag} = data;
 </script>
 
-<section class="flex flex-col lg:grid lg:grid-cols-2 px-sm-padding md:px-md-padding xl:px-lg-padding py-12 lg:py-24">
+<section class="flex flex-col lg:grid lg:grid-cols-2 px-sm-padding md:px-md-padding xl:px-lg-padding py-12 lg:py-24 max-w-content">
   <div class="lg:pr-6">
     {#if tag}
       <span class="flex uppercase text-marine opacity-50 text-base lg:text-xl font-bold leading-5 lg:leading-6 mb-4">{tag}</span>

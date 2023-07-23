@@ -11,7 +11,7 @@
 
 </script>
 
-<section class="flex flex-col bg-light py-16 md:mt-12 px-sm-padding md:px-md-padding xl:px-lg-padding">
+<section class="flex flex-col bg-light py-16 md:mt-12 px-sm-padding md:px-md-padding xl:px-lg-padding max-w-content">
   <div class="flex flex-col items-end w-full text-sm mb-4">
     <span class="font-bold">{publishedAt}</span>
     <span>{author.name}</span>

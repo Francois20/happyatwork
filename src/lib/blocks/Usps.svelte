@@ -4,20 +4,22 @@
 
 </script>
 
-<section class="relative grid grid-col-1 md:grid-cols-3 gap-[5%] px-sm-padding md:px-md-padding xl:px-lg-padding py-12 lg:py-32 bg-marine my-12">
-  {#each data.items as item}
-    <div class="flex flex-col relative text-center">
-      <div class="flex mt-6 mb-8">
-        <Image 
-          imageStyle="w-[48px] md:w-[60px]"
-          source={item.image}
-          width={{ mobile: 50, tablet: 100, desktop: 100 }}
-        />
-        <h3 class="font-bold w-56 text-xl md:text-2xl lg:text-3xl uppercase text-light text-left ml-8">{item.title}</h3>
+<section class="flex justify-center w-full py-12 lg:py-32 bg-marine my-12">
+  <div class="max-w-content grid grid-col-1 md:grid-cols-3 gap-[5%] px-sm-padding md:px-md-padding xl:px-lg-padding">
+    {#each data.items as item}
+      <div class="flex flex-col relative text-center">
+        <div class="flex mt-6 mb-8">
+          <Image 
+            imageStyle="w-[48px] md:w-[60px]"
+            source={item.image}
+            width={{ mobile: 50, tablet: 100, desktop: 100 }}
+          />
+          <h3 class="font-bold w-56 text-xl md:text-2xl lg:text-3xl uppercase text-light text-left ml-8">{item.title}</h3>
+        </div>
+        <p class="leading-7 text-light text-left">{item.text}</p>
       </div>
-      <p class="leading-7 text-light text-left">{item.text}</p>
-    </div>
-  {/each}
+    {/each}
+  </div>
 </section>
 
 <style>

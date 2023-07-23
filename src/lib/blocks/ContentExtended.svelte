@@ -8,7 +8,7 @@
 
 </script>
 
-<section class="px-sm-padding md:px-md-padding xl:px-lg-padding py-12 md:pt-24 md:pb-32 bg-light">
+<section class="px-sm-padding md:px-md-padding xl:px-lg-padding py-12 md:pt-24 md:pb-32 bg-light max-w-content">
   <div class="flex flex-col {reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'}">
     <div class="w-full lg:w-1/2 lg:pr-16">
       {#if tag}

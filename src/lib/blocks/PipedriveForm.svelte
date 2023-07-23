@@ -12,7 +12,7 @@
   })
 </script>
 
-<section class="flex flex-col lg:flex-row gap-16 xl:gap-24 bg-light py-12 lg:py-24 w-full md:px-md-padding xl:px-lg-padding">
+<section class="flex flex-col lg:flex-row gap-16 xl:gap-24 bg-light py-12 lg:py-24 w-full md:px-md-padding xl:px-lg-padding max-w-content">
   <div class="flex flex-1 flex-col px-sm-padding md:px-0">
     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 lg:mb-12 uppercase">{title}</h2>
     <PortableText data={text} />

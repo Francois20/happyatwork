@@ -4,7 +4,7 @@
   export let data;
 </script>
 
-<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full ">
+<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full max-w-content">
   <div class="py-12 lg:py-16">
     <span class="flex uppercase text-marine opacity-50 text-base lg:text-xl font-bold leading-5 lg:leading-6 mb-8">{data.text}</span>
     <div class="grid grid-cols-3 gap-y-8 gap-x-4 md:gap-0 md:flex md:justify-between">

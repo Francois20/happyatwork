@@ -19,7 +19,7 @@
   export let data;
 </script>
 
-<div class="bg-light w-full">
+<div class="bg-light w-full flex flex-col items-center">
   {#each data.page.pageBuilder as item}
     {#if item._type === 'hero'}
       <Hero data={item} />

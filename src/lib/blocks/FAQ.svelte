@@ -46,7 +46,7 @@
   }
 </script>
 
-<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full py-12 lg:py-16">
+<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full py-12 lg:py-16 max-w-content">
     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-16">{data.title}</h2>
     <form on:submit|preventDefault={(e) => filterInput = value}>
       <div class="relative w-full md:max-w-[540px] mx-auto mb-12">

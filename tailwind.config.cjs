@@ -31,6 +31,9 @@ module.exports = {
 				'sm-padding': '1.5rem',
 				'md-padding': '4rem',
 				'lg-padding': '10rem'
+			},
+			maxWidth: {
+				content: '1440px'
 			}
 		}
 	},

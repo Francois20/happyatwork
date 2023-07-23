@@ -39,7 +39,7 @@
 
 </script>
 
-<section class="flex flex-col lg:flex-row flex-1 gap-16 px-0 lg:px-md-padding xl:px-lg-padding my-24 lg:my-40">
+<section class="flex flex-col lg:flex-row flex-1 gap-16 px-0 lg:px-md-padding xl:px-lg-padding my-24 lg:my-40 max-w-content">
   <div class="px-sm-padding md:px-md-padding lg:px-0">
     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 uppercase">{title}</h2>
     <PortableText data={text}/>

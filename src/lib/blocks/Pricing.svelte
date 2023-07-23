@@ -28,7 +28,7 @@
 
   <p class="max-w-4xl text-center">{text}</p>
 
-  <div class="relative grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
+  <div class="relative grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12 max-w-content">
     {#each items as item}
       <div class="flex flex-col items-center bg-light rounded-xl shadow-xl pb-8">
         <div class="relative flex flex-col items-center bg-marine rounded-t-xl px-8 pt-12 pb-6 leading-7 text-light">

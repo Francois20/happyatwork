@@ -7,7 +7,7 @@
  
 </script>
 
-<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full">
+<section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full max-w-content">
   <div class="py-16">
     {#each data.items as item, i}
       <div class="flex flex-col mb-16 lg:mb-28 {i % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}">

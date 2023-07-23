@@ -4,8 +4,8 @@
   const {name, title, company, image, text } = data;
 </script>
 
-<section class="bg-marine px-sm-padding md:px-md-padding xl:px-lg-padding w-full">
-  <div class="flex py-12 xl:px-20 lg:py-32">
+<section class="bg-marine px-sm-padding md:px-md-padding xl:px-lg-padding w-full flex justify-center">
+  <div class="flex py-12 lg:py-32 max-w-content px-sm-padding md:px-md-padding xl:px-lg-padding" >
     {#if image}
       <Image
           style="!items-start hidden md:block"
