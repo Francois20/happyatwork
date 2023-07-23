@@ -44,7 +44,6 @@
     ? activeTab = ''
     : activeTab = item
   }
-  console.log(data.faqList);
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full py-12 lg:py-16">

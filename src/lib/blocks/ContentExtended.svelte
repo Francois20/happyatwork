@@ -12,7 +12,7 @@
   <div class="flex flex-col {reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'}">
     <div class="w-full lg:w-1/2 lg:pr-16">
       {#if tag}
-        <span class="block text-marine opacity-50 text-base lg:text-xl font-bold w-min leading-5 lg:leading-6 mb-4">{tag}</span>
+        <span class="flex uppercase text-marine opacity-50 text-base lg:text-xl font-bold leading-5 lg:leading-6 mb-4">{tag}</span>
       {/if}
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 lg:mb-12 uppercase">{title}</h2>
       <PortableText data={text}/>

@@ -21,7 +21,7 @@
 
 </script>
 
-<footer class="flex flex-col bg-marine py-12 md:pt-16 md:pb-12 w-full px-sm-padding md:px-md-padding xl:px-lg-padding">
+<footer class="relative z-20 flex flex-col bg-marine py-12 md:pt-16 md:pb-12 w-full px-sm-padding md:px-md-padding xl:px-lg-padding">
   <div class="flex flex-col lg:flex-row justify-between pb-6 lg:pb-36"> 
     <a href="/" class="w-40 md:w-48 mb-6 md:mb-0">
       <Image 

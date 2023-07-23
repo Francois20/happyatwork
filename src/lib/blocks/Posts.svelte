@@ -31,7 +31,7 @@
 
 </script>
 
-<section class="flex flex-col py-12 md:py-16 px-sm-padding md:px-md-padding xl:px-lg-padding">
+<section class="flex flex-col py-12 md:pt-16 pb-24 px-sm-padding md:px-md-padding xl:px-lg-padding">
   <FilterTabs
     items={categories}
     selectedItem={selectedCategory}
@@ -41,7 +41,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
   {#each filteredPosts as post}
     <div class="flex flex-col">
-      <a href={pageName + '/' + post.seo.slug.current} class="shadow-xl mb-8 w-full aspect-[5/3] overflow-hidden rounded-xl">
+      <a href={pageName + '/' + post.seo.slug.current} class="shadow-xl mb-12 w-full aspect-[5/3] overflow-hidden rounded-xl">
         <Image 
           imageStyle="relative object-cover h-[240px] w-[380px] hover:scale-105 duration-200"
           source={post.image}

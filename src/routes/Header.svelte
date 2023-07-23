@@ -17,7 +17,6 @@
   let showMobileMenu = false
 
   $: hasHero = $page.data.page?.pageBuilder?.some((x) => x._type === 'hero') || false
-
   onMount(() => {
     window.addEventListener("scroll", handleScroll);
   })
@@ -58,11 +57,11 @@
 		<ul class="flex gap-8 xl:gap-12 items-center rounded-full py-6 px-12 {isScrolling ? 'bg-light shadow-lg' : 'bg-transparent'} {scrollDown ? '-translate-y-32' : 'translate-y-0'} duration-500">
       {#each links as link, i}
         {#if i !== 0}
-          <div class="w-px h-full bg-light {hasHero ? isScrolling ? 'bg-dark' : 'bg-light' : 'bg-dark'}" />
+          <div class="min-w-px max-w-px w-px h-6 border-r border-dashed {hasHero ? isScrolling ? 'border-marine' : 'border-light' : 'border-marine'}" />
         {/if}
         <li 
-          aria-current={$page.params.page === link.internalLink?.slug ? 'page' : undefined}
-          class="relative {$page.params.page === link.internalLink?.slug ? 'opacity-50 pointer-events-none' : 'opacity-100'}"
+          aria-current={link.internalLink && ($page.params.page === link.internalLink?.slug) ? 'page' : undefined}
+          class="relative {link.internalLink && ($page.params.page === link.internalLink?.slug) ? 'opacity-50 pointer-events-none' : 'opacity-100'}"
         >
           <a
             href={
@@ -112,7 +111,13 @@
     </nav>
   </div>
 
-	<div class="hidden lg:block group">
-    <ButtonCircle data={cta} small/>
+  <div class="hidden lg:block group">
+    <a href={cta.type === 'internal' ? cta.internalLink.lang + '/' + cta.internalLink.slug : cta.externalLink}>
+      <button class={` ${isScrolling || !hasHero ? 'text-dark' : 'text-light'} border border-dashed border-blue w-20 h-20 group-hover:bg-green group-hover:text-light group-hover:border-green duration-200 rounded-full flex items-center justify-center`}>
+        <span class='leading-5 text-base uppercase font-semibold w-32'>
+          {cta.title}
+        </span>
+      </button>
+    </a>
 	</div>
 </header>

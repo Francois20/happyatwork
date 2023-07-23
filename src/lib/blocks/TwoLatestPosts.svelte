@@ -10,7 +10,7 @@
 
 </script>
 
-<section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 xl:gap-32 px-sm-padding md:px-md-padding xl:px-lg-padding py-24">
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 xl:gap-32 px-sm-padding md:px-md-padding xl:px-lg-padding py-32">
   {#each posts as post}
     <div class="flex flex-col">
       <a 

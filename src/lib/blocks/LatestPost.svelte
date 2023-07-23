@@ -19,7 +19,7 @@
 
   <div class="flex flex-col-reverse md:flex-row">
     <div class="flex flex-col md:w-1/2 md:pr-24">
-      <span class="text-yellow text-sm md:text-lg uppercase font-bold">{lang === 'en-us' ? category.title.en : category.title.sv}</span>
+      <span class="text-marine opacity-50 text-sm md:text-lg uppercase font-bold">{lang === 'en-us' ? category.title.en : category.title.sv}</span>
       <span class="font-bold text-4xl mt-4 mb-4">{title}</span>
       <span>{summary}</span>
       <a href={data.parentPage.slug + '/' + seo.slug.current} class="font-bold hover:text-blue mt-6 flex items-center gap-1 hover:gap-2 duration-200">

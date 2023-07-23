@@ -12,7 +12,7 @@
 <div class="app relative">
 	<Header data={navigation} />
 
-	<main class="flex flex-col items-center">
+	<main class="flex flex-col items-center overflow-x-hidden">
 		<slot />
 	</main>
 

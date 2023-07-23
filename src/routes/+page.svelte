@@ -13,6 +13,14 @@
   <meta property="og:title" content="{ogTitle}">
   <meta property="og:description" content="{ogDescription}">
   <meta property="og:image" content="{ogImage}">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91434214-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91434214-3');
+</script>
 </svelte:head>
 
 <BlockHandler {data} />

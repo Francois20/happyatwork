@@ -4,39 +4,20 @@
 
 </script>
 
-<section class="relative grid grid-col-1 md:grid-cols-3 bg-marine gap-[8%] px-sm-padding md:px-md-padding xl:px-lg-padding pt-24 md:pt-40 lg:pt-44 pb-40 md:pb-32 mb-24 md:mb-40">
+<section class="relative grid grid-col-1 md:grid-cols-3 gap-[5%] px-sm-padding md:px-md-padding xl:px-lg-padding py-12 lg:py-32 bg-marine my-12">
   {#each data.items as item}
-    <div class="flex flex-col relative">
-      <div class="flex flex-row md:flex-col items-center md:items-start mt-6 mb-4">
+    <div class="flex flex-col relative text-center">
+      <div class="flex mt-6 mb-8">
         <Image 
-          imageStyle="w-[48px] md:w-[70px]"
-          style="justify-start"
+          imageStyle="w-[48px] md:w-[60px]"
           source={item.image}
           width={{ mobile: 50, tablet: 100, desktop: 100 }}
         />
-        <h3 class="font-bold w-16 text-xl md:text-2xl lg:text-3xl uppercase text-light md:mt-6 ml-4 md:ml-0">{item.title}</h3>
+        <h3 class="font-bold w-56 text-xl md:text-2xl lg:text-3xl uppercase text-light text-left ml-8">{item.title}</h3>
       </div>
-      <p class="leading-7 text-light">{item.text}</p>
+      <p class="leading-7 text-light text-left">{item.text}</p>
     </div>
   {/each}
-
-  <div class="custom-shape-divider-top-1682626371">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-    </svg>
-  </div>
-
-  <div class="custom-shape-divider-top-1682627521">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-    </svg>
-  </div>
-
-  <div class="custom-shape-divider-top-1682627523">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-    </svg>
-  </div>
 </section>
 
 <style>
