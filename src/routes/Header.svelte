@@ -29,7 +29,7 @@
     } 
     lastScrollTop = window.pageYOffset <= 0 ? 0 : window.pageYOffset;
 
-    if (window.pageYOffset > 300) {
+    if (window.pageYOffset > 560) {
       if(!isScrolling){
         isScrolling = true
       }
@@ -113,7 +113,7 @@
 
   <div class="hidden lg:block group">
     <a href={cta.type === 'internal' ? cta.internalLink.lang + '/' + cta.internalLink.slug : cta.externalLink}>
-      <button class={` ${isScrolling || !hasHero ? 'text-dark' : 'text-light'} border border-dashed border-blue w-20 h-20 group-hover:bg-green group-hover:text-light group-hover:border-green duration-200 rounded-full flex items-center justify-center`}>
+      <button class={` ${isScrolling || !hasHero ? 'text-dark bg-light' : 'text-light bg-marine'} border border-dashed border-blue w-20 h-20 group-hover:bg-green group-hover:text-light group-hover:border-green duration-200 rounded-full flex items-center justify-center`}>
         <span class='leading-5 text-base uppercase font-semibold w-32'>
           {cta.title}
         </span>

@@ -89,6 +89,21 @@ export async function load({ params }) {
             }
           }
         },
+        _type == 'customerStories' => {
+          ...,
+          items[]{
+            ...,
+            link {
+              ...,
+              internalLink {
+                _type == "reference" => {
+                  "slug": @ -> seo.slug.current,
+                  "lang": @ -> __i18n_lang
+                }
+              }
+            }
+          }
+        },
         _type == 'contentMulti' => {
           ...,
           items[]{

@@ -1,12 +1,14 @@
 <script>
-  import Image from "../components/Image.svelte";
+  import Image from "$lib/components/Image.svelte";
+  import Link from "$lib/components/Link.svelte";
+  import PortableText from "$lib/portableText/PortableText.svelte";
 
   export let data;
   const {items} = data
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full pt-20 pb-32 max-w-content">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-24">
     {#each items as item, i}
     <div class="flex flex-col">
       <div class="relative flex flex-col lg:flex-row mb-8 lg:mb-12 items-center lg:items-start">
@@ -25,8 +27,11 @@
           <p>{item.title}</p>
         </div>
       </div>
-      <div class="flex flex-grow flex-col lg:flex-row">
-        <p>{item.text}</p>
+      <div class="flex flex-grow flex-col">
+        <PortableText data={item.text}/>
+        {#if item.link}
+          <Link link={item.link} />
+        {/if}
       </div>
     </div>
     {/each}

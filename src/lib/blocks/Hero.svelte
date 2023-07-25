@@ -52,6 +52,7 @@
   </div>
 </section>
 
+<div class="h-24 w-full md:hidden"/>
 
 
 <style>
