@@ -10,7 +10,7 @@
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding py-12 md:pt-24 md:pb-32 bg-light max-w-content">
   <div class="flex flex-col {reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'}">
-    <div class="w-full lg:w-1/2 lg:pr-16">
+    <div class="w-full lg:w-1/2 {reversed ? 'lg:pl-16' : 'lg:pr-16'}">
       {#if tag}
         <span class="flex uppercase text-marine opacity-50 text-base lg:text-xl font-bold leading-5 lg:leading-6 mb-4">{tag}</span>
       {/if}

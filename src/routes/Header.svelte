@@ -4,7 +4,6 @@
 	import { IconMenu } from '@tabler/icons-svelte';
 	import { onMount } from 'svelte';
 	import Button from '../lib/components/Button.svelte';
-	import ButtonCircle from '../lib/components/ButtonCircle.svelte';
 
   export let data;
 
@@ -22,14 +21,14 @@
   })
 
   const handleScroll = () => {
-    if (window.pageYOffset > lastScrollTop) {
+    if (window.scrollY > lastScrollTop) {
       scrollDown = true
-    } else if (window.pageYOffset < lastScrollTop) {
+    } else if (window.scrollY < lastScrollTop) {
       scrollDown = false
     } 
-    lastScrollTop = window.pageYOffset <= 0 ? 0 : window.pageYOffset;
+    lastScrollTop = window.scrollY <= 0 ? 0 : window.scrollY;
 
-    if (window.pageYOffset > 560) {
+    if (window.scrollY > 560) {
       if(!isScrolling){
         isScrolling = true
       }
