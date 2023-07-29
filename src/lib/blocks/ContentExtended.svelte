@@ -30,7 +30,7 @@
     {#each paragraphs as paragraph, i}
       <div class="flex">
         {#if i !== 0 && i !== 3 && i !== 6}
-          <div class="hidden lg:block border-r border-yellow border-dashed w-1 min-w-[2px] max-w-[2px] h-full mr-12" />
+          <div class="hidden lg:block border-r border-marine border-dashed w-1 min-w-[2px] max-w-[2px] h-full mr-12" />
         {/if}
         <div class={i !== 2 && i !== 5 && i !== 8 && 'lg:mr-8'}>
           <h3 class="text-xl font-semibold">{paragraph.title}</h3>

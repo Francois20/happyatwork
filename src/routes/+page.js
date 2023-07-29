@@ -2,6 +2,7 @@ import { client } from '../sanityClient';
 
 export async function load({ params }) {
 	let latestPosts = null;
+	let latestPost = null;
 	const lang = params.lang || 'en-us';
 	const data = await client.fetch(`*[_type == "siteSettings" && __i18n_lang == "${lang}"]{
     post -> {
@@ -171,7 +172,7 @@ export async function load({ params }) {
 	}
 
 	if (data.startPage.pageBuilder.some((x) => x._type === 'latestPost')) {
-		latestPosts =
+		latestPost =
 			await client.fetch(`*[_type == "post" && __i18n_lang == "${lang}"] | order(publishedAt desc)[0]{
       ...,
       category->,

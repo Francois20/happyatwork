@@ -9,7 +9,7 @@
     {/if}
     <button 
       on:click={() => onClick(item)}
-      class="border border-dashed border-marine rounded-full py-2 md:border-none text-center text-marine md:px-5 hover:opacity-50 uppercase {selectedItem === item && 'opacity-50'}"
+      class="border border-dashed border-marine rounded-full py-2 md:py-0 md:border-none text-center text-marine md:px-5 hover:opacity-50 uppercase {selectedItem === item && 'opacity-50'}"
     >
       {item}
     </button>

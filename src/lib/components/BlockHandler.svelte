@@ -17,6 +17,7 @@
 	import FreeText from "$lib/blocks/FreeText.svelte";
 	import PipedriveForm from "../blocks/PipedriveForm.svelte";
   export let data;
+  console.log('RRRRRRRRRRR', data);
 </script>
 
 <div class="bg-light w-full flex flex-col items-center">
