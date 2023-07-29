@@ -3,7 +3,7 @@
   export let author, publishedAt, vertical, style
 </script>
 
-<div class="flex items-center mb-4 md:mb-0 {vertical ? 'md:flex-col md:items-start' : ''} {style && style}">
+<div class="flex items-center mb-8 lg:mb-4 md:mb-0 {vertical ? 'md:flex-col md:items-start' : ''} {style && style}">
   <Image 
     imageStyle="object-cover rounded-full shadow-xl h-12 min-h-12 w-12 min-w-12 md:h-16 md:w-16 {vertical && 'md:mb-4'}"
     source={author.image}

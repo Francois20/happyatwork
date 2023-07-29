@@ -3,6 +3,7 @@ import { client } from '../../../sanityClient';
 export async function load({ params }) {
 	let posts = [];
 	let latestPost = null;
+	let latestPosts = null;
 
 	const data = await client.fetch(`*[_type == "page" && seo.slug.current == "${params.page}"]{
       ...,
@@ -218,11 +219,21 @@ export async function load({ params }) {
     }`);
 	}
 
+	if (data.pageBuilder.some((x) => x._type === 'twoLatestPosts')) {
+		latestPosts =
+			await client.fetch(`*[_type == "post" && __i18n_lang == "${params.lang}"] | order(publishedAt desc)[0...2]{
+        ...,
+        category->,
+        author->
+      }`);
+	}
+
 	if (data) {
 		return {
 			page: data,
 			posts: posts,
-			latestPost: latestPost
+			latestPost: latestPost,
+			latestPosts: latestPosts
 		};
 	}
 	return {

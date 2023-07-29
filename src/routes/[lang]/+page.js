@@ -1,9 +1,19 @@
 import { client } from '../../sanityClient';
 
 export async function load({ params }) {
+	let latestPost = null;
 	let latestPosts = null;
 	const lang = params.lang || 'en-us';
 	const data = await client.fetch(`*[_type == "siteSettings" && __i18n_lang == "${lang}"]{
+    post -> {
+      ...,
+      parentPage {
+        _type == "reference" => {
+          "slug": @ -> seo.slug.current,
+          "lang": @ -> __i18n_lang
+        }
+      }
+    },
     startPage -> {
       ...,
       pageBuilder[] {
@@ -164,9 +174,18 @@ export async function load({ params }) {
                   "lang": @ -> __i18n_lang
     }}}}}}}}[0]`);
 
-	if (data.startPage.pageBuilder.some((x) => x._type === 'twoLatestPosts')) {
+	if (data.pageBuilder.some((x) => x._type === 'twoLatestPosts')) {
 		latestPosts =
-			await client.fetch(`*[_type == "post" && __i18n_lang == "${lang}"] | order(publishedAt desc)[0...2]{
+			await client.fetch(`*[_type == "post" && __i18n_lang == "${params.lang}"] | order(publishedAt desc)[0...2]{
+        ...,
+        category->,
+        author->
+      }`);
+	}
+
+	if (data.pageBuilder.some((x) => x._type === 'latestPost')) {
+		latestPost =
+			await client.fetch(`*[_type == "post" && __i18n_lang == "${params.lang}"] | order(publishedAt desc)[0]{
       ...,
       category->,
       author->
@@ -176,6 +195,7 @@ export async function load({ params }) {
 	if (data) {
 		return {
 			page: data.startPage,
+			latestPost: latestPost,
 			latestPosts: latestPosts
 		};
 	}

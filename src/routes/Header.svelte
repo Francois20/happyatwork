@@ -97,8 +97,9 @@
         <ul class="flex flex-col gap-8 rounded-full py-6 px-12">
           {#each links as link}
             <li aria-current={$page.url.pathname === '/' + link.internalLink?.slug ? 'page' : undefined} class="relative">
-              <a href={link.externalLink ? link.externalLink : $page.url.pathname === '/' ? link.internalLink.lang + '/' + link.internalLink.slug : link.internalLink.slug}
+              <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
                 class='relative uppercase'
+                on:click={() => showMobileMenu = false}
               >
                 {link.title}
               </a>

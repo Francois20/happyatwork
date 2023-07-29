@@ -1,1 +1,1 @@
-<ol class="py-8 leading-7 list-decimal pl-12 mt-4 mb-8 bg-light"><slot /></ol>
+<ol class="py-4 leading-7 list-decimal pl-4 lg:pl-12 bg-light"><slot /></ol>

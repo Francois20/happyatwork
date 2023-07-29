@@ -75,18 +75,13 @@
     <h1 class="text-3xl lg:text-6xl uppercase font-extrabold mb-6 lg:mb-20 mt-4 lg:mt-6 lg:!leading-[4rem]">{data.page.title}</h1>
     <Author {author} {publishedAt} style="block lg:hidden md:mb-4 lg:mb-0" />
     <PortableText data={body}/>
+    <span class="block pt-8 pb-2 lg:hidden">{shareText}</span>
+    <div class="flex gap-4 lg:hidden">
+      <a href={facebookUrl} target="_blank" rel="noreferrer"><FacebookIcon color="#003553"/></a>
+      <a href={twitterUrl} target="_blank" rel="noreferrer"><TwitterIcon color="#003553" /></a>
+      <a href={linkedInUrl} target="_blank" rel="noreferrer"><LinkedInIcon color="#003553" /></a>
+    </div>
   </article>
 
-    <div class="fixed bottom-4 right-4 lg:hidden">
-      <a href={facebookUrl} target="_blank" rel="noreferrer" class="block mb-2">
-        <div class="h-12 w-12 rounded-full bg-blue flex justify-center items-center p-1">
-          <FacebookIcon color="#FFFFFF"/>
-        </div>
-      </a>
-      <a href={twitterUrl} target="_blank" rel="noreferrer">
-        <div class="h-12 w-12 rounded-full bg-blue flex justify-center items-center p-2">
-        <TwitterIcon color="#FFFFFF"/>
-      </div>
-      </a>
-    </div>
+    
 </section>

@@ -3,7 +3,15 @@ import { client } from '../sanityClient';
 export async function load({ params }) {
 	const lang = params.lang || 'en-us';
 	const data = await client.fetch(`*[_type == "siteSettings" && __i18n_lang == "${lang}"]{
-    post,
+    post -> {
+      ...,
+      parentPage {
+        _type == "reference" => {
+          "slug": @ -> seo.slug.current,
+          "lang": @ -> __i18n_lang
+        }
+      }
+    },
     error,
     footer {
       ...,

@@ -4,6 +4,15 @@ export async function load({ params }) {
 	let latestPosts = null;
 	const lang = params.lang || 'en-us';
 	const data = await client.fetch(`*[_type == "siteSettings" && __i18n_lang == "${lang}"]{
+    post -> {
+      ...,
+      parentPage {
+        _type == "reference" => {
+          "slug": @ -> seo.slug.current,
+          "lang": @ -> __i18n_lang
+        }
+      }
+    },
     startPage -> {
       ...,
       pageBuilder[] {
@@ -161,10 +170,20 @@ export async function load({ params }) {
     }`);
 	}
 
+	if (data.startPage.pageBuilder.some((x) => x._type === 'latestPost')) {
+		latestPosts =
+			await client.fetch(`*[_type == "post" && __i18n_lang == "${lang}"] | order(publishedAt desc)[0]{
+      ...,
+      category->,
+      author->
+    }`);
+	}
+
 	if (data) {
 		return {
 			page: data.startPage,
-			latestPosts: latestPosts
+			latestPosts: latestPosts,
+			latestPost: latestPost
 		};
 	}
 	return {
