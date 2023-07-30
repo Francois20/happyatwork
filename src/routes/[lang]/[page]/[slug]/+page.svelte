@@ -14,7 +14,6 @@
   const {title, description, ogTitle, ogDescription, ogImage} = data.page.seo
   const {body, category, author, publishedAt, estimatedReadingTime} = data.page;
   const {estimatedReadTimeText, returnText, shareText} = $page.data.post
-
   let previousPage = '';
   let facebookUrl = '';
   let twitterUrl = '';

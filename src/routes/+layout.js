@@ -1,44 +1,9 @@
 import { client } from '../sanityClient';
+import { getSiteSettingsQuery } from '$lib/queries';
 
 export async function load({ params }) {
 	const lang = params.lang || 'en-us';
-	const data = await client.fetch(`*[_type == "siteSettings" && __i18n_lang == "${lang}"]{
-    post -> {
-      ...,
-      parentPage {
-        _type == "reference" => {
-          "slug": @ -> seo.slug.current,
-          "lang": @ -> __i18n_lang
-        }
-      }
-    },
-    error,
-    footer {
-      ...,
-      links[] {
-        ...,
-        internalLink {
-          _type == "reference" => {
-                      "slug": @ -> seo.slug.current,
-                      "lang": @ -> __i18n_lang
-    }}},
-      secondaryLinks[] {
-        ...,
-        internalLink {
-          _type == "reference" => {
-                      "slug": @ -> seo.slug.current,
-                      "lang": @ -> __i18n_lang
-    }}}},
-    navigation {
-      ...,
-      links[] {
-        ...,
-        internalLink {
-          _type == "reference" => {
-                      "slug": @ -> seo.slug.current,
-                      "lang": @ -> __i18n_lang
-      }}}
-    }}[0]`);
+	const data = await client.fetch(getSiteSettingsQuery(lang));
 
 	if (data) {
 		return {

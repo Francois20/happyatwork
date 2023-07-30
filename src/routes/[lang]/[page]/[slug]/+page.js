@@ -1,21 +1,8 @@
 import { client } from '../../../../sanityClient';
+import { getPostQuery } from '$lib/queries';
 
 export async function load({ params }) {
-	const data = await client.fetch(`*[_type == "post" && seo.slug.current == "${params.slug}"]{
-    ...,
-    author->,
-    category->,
-    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 260 ),
-    body[] {
-      ...,
-      asset->,
-      markDefs[] {
-        ...,
-        item {
-          _type == "reference" => {
-            "slug": @ -> seo.slug.current,
-            "lang": @ -> __i18n_lang
-  }}}}}[0]`);
+	const data = await client.fetch(getPostQuery(params.slug));
 
 	if (data) {
 		return {
