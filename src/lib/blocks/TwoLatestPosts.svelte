@@ -3,14 +3,14 @@
   import { IconChevronRight } from '@tabler/icons-svelte';
   import { page } from '$app/stores';
 
-  export let data, posts;
+  export let data, twoPosts;
   const {linkText, parentPage, labelText} = data;
 
   const lang = $page.data.page.__i18n_lang
 </script>
 
 <section class="md:grid md:grid-cols-2 flex flex-col gap-24 md:gap-16 xl:gap-32 px-sm-padding md:px-md-padding xl:px-lg-padding py-12 md:py-32 max-w-content">
-  {#each posts as post}
+  {#each twoPosts as post}
     <div class="flex flex-col">
       <a 
         href={
