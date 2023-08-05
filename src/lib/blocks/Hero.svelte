@@ -25,7 +25,7 @@
       style="absolute bottom-0 md:h-auto w-max left-1/2 transform -translate-x-1/2"
       imageStyle="h-[330px] md:h-[460px] xl:h-[650px] w-full"
       source={image}
-      width={{ mobile: 340, tablet: 500, desktop: 700 }}
+      width={{ mobile: 340, tablet: 500, desktop: 1400 }}
     />
   </div>
 
@@ -35,7 +35,7 @@
     </h1>
   
     {#if tagline}
-      <p class="text-gray mb-12 lg:max-w-[80%] {orientation === 'right' ? 'lg:text-right' : 'lg:text-left'}">
+      <p class="text-light mb-12 lg:max-w-[80%] {orientation === 'right' ? 'lg:text-right' : 'lg:text-left'}">
         {tagline}
       </p>
     {/if}

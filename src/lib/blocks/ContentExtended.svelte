@@ -17,9 +17,9 @@
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 lg:mb-12 uppercase">{title}</h2>
       <PortableText data={text}/>
     </div>
-    <div class="flex flex-1 lg:items-center my-10 lg:my-0 {reversed ? 'lg:justify-start' : 'lg:justify-end'}">
+    <div class="flex flex-1 lg:items-center mb-4 mt-8 lg:my-0 {reversed ? 'lg:justify-start' : 'lg:justify-end'}">
       <Image
-        imageStyle="relative object-cover rounded-xl shadow-xl h-[240px] md:h-[360px] w-full md:w-[540px]" 
+        imageStyle="relative object-cover rounded-3xl shadow-xl h-[240px] md:h-[360px] w-full md:w-[540px]" 
         source={image}
         width={{ mobile: 300, tablet: 300, desktop: 800 }}
       />
@@ -30,7 +30,7 @@
     {#each paragraphs as paragraph, i}
       <div class="flex">
         {#if i !== 0 && i !== 3 && i !== 6}
-          <div class="hidden lg:block border-r border-marine border-dashed w-1 min-w-[2px] max-w-[2px] h-full mr-12" />
+          <div class="hidden lg:block border-r border-marine border-dashed w-1 min-w-[2px] max-w-[2px] h-14 mr-12" />
         {/if}
         <div class={i !== 2 && i !== 5 && i !== 8 && 'lg:mr-8'}>
           <h3 class="text-xl font-semibold">{paragraph.title}</h3>

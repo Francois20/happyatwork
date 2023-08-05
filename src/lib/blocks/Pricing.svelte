@@ -30,8 +30,8 @@
 
   <div class="relative grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12 max-w-content">
     {#each items as item}
-      <div class="flex flex-col items-center bg-light rounded-xl shadow-xl pb-8">
-        <div class="relative flex flex-col items-center bg-marine rounded-t-xl px-8 pt-12 pb-6 leading-7 text-light">
+      <div class="flex flex-col items-center bg-light rounded-3xl shadow-xl pb-8">
+        <div class="relative flex flex-col items-center bg-marine rounded-t-3xl px-8 pt-12 pb-6 leading-7 text-light">
           <h3 style="color: {item.color.value};" class="leading-7 text-3xl font-bold uppercase mb-6">{item.title}</h3>
           <p class="text-center mb-10 h-[84px]">{item.description}</p>
           <span class="font-bold text-4xl lg:text-5xl mb-2">{item.prices.find(x => x.organizationSize.title === currentOrganizationSize).monthlyFee}</span>

@@ -1,41 +1,39 @@
 <script>
   import PortableText from "$lib/portableText/PortableText.svelte";
-	import { IconMailForward, IconMessage, IconMessage2, IconSend } from "@tabler/icons-svelte";
+	import { IconMailForward} from "@tabler/icons-svelte";
+  import axios from 'axios';
   export let data;
 
-  const {title, text, nameLabel, emailLabel, messageLabel, submitText} = data
+  const {title, text, nameLabel, emailLabel, messageLabel, submitText, confirmationTitle, confirmationText} = data
   let name = ''
   let email = ''
   let message = ''
   let sentMessage = false
 
-  const sendMessage = () => {
-    console.log(name, email, message)
+  const sendMessage = async () => {
+    sentMessage = false
+    const baseUrl = "https://prod-deprecated-api-haw.azurewebsites.net"
+    try {
+    const res = await axios.post(baseUrl + '/api/email/website', ''.concat(
+        'Sender=',
+        window.encodeURI(email),
+        '&Name=',
+        window.encodeURI(name),
+        '&Subject=',
+        window.encodeURI(message),
+        '&Body=',
+        window.encodeURI('')
+    ), {
+        headers: {
+            Accept: '*/*',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+    })
     sentMessage = true
-        // const baseUrl = "https://prod-deprecated-api-haw.azurewebsites.net"
-        // axios
-        // .post(baseUrl + '/api/email/website', ''.concat(
-        //     'Sender=',
-        //     window.encodeURI(email),
-        //     '&Name=',
-        //     window.encodeURI(name),
-        //     '&Subject=',
-        //     window.encodeURI(message),
-        //     '&Body=',
-        //     window.encodeURI('')
-        // ), {
-        //     headers: {
-        //         Accept: '*/*',
-        //         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        //     }
-        // })
-        // .then(res => {
-        //     sentMessage = true
-        // })
-        // .catch(
-        //     err => console.log(err)
-        // );
-    }
+  } catch (e){
+     console.log(e)
+    };
+  }
 
 </script>
 
@@ -69,8 +67,8 @@
   <div class="flex justify-center items-center w-full md:min-w-[540px] h-[662px] lg:rounded-xl shadow-xl bg-marine py-16 px-sm-padding lg:px-8">
     <div class="flex flex-col justify-center items-center bg-light h-[380px] w-[380px] rounded-full">
       <IconMailForward size={82} stroke={1.3} color="#fac600"/>
-      <p class="font-bold text-3xl uppercase">Thanks!</p>
-      <p>The message was sent!</p>
+      <p class="font-bold text-3xl uppercase">{confirmationTitle}</p>
+      <p>{confirmationText}</p>
     </div>
   </div>
   {/if}
