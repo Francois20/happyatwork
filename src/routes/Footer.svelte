@@ -33,7 +33,7 @@
     <div class="flex flex-col lg:flex-row lg:gap-8">
       <div class="flex gap-x-4 lg:mr-4 xl:mr-24 my-6 lg:my-0">
         {#each soMeLinks as link}
-          <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.slug} class="w-6 text-left lg:text-right">
+          <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug} class="w-6 text-left lg:text-right">
             <Image 
               source={link.image}
               width={{ mobile: 24, tablet: 24, desktop: 24 }}
@@ -45,11 +45,7 @@
     
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-4 xl:gap-x-16">
         {#each links as link}
-          <a href={link.type === 'external'
-          ? link.externalLink
-            : $page.url.pathname === '/'
-            ? link.internalLink.lang + '/' + link.internalLink.slug
-          : link.internalLink.slug}
+          <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
           class="text-left lg:text-right text-light hover:text-blue"
           >
             {link.title}
@@ -63,11 +59,7 @@
     <ul class="flex flex-col lg:flex-row gap-4 lg:gap-12">
       {#each secondaryLinks as link}
         <li class="text-sm">
-          <a href={link.type === 'external'
-          ? link.externalLink
-            : $page.url.pathname === '/'
-            ? link.internalLink.lang + '/' + link.internalLink.slug
-          : link.internalLink.slug}
+          <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
           class="text-light hover:text-blue"
           >
             {link.title}
