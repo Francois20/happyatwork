@@ -176,13 +176,10 @@ export const getPageQuery = (page) => {
         ...,
         items[]{
           ...,
-          link {
-            ...,
-            internalLink {
-              _type == "reference" => {
-                "slug": @ -> seo.slug.current,
-                "lang": @ -> __i18n_lang
-              }
+          internalLink {
+            _type == "reference" => {
+              "slug": @ -> seo.slug.current,
+              "lang": @ -> __i18n_lang
             }
           }
         }

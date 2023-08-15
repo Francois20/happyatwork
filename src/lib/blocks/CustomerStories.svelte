@@ -1,10 +1,12 @@
 <script>
   import Image from "$lib/components/Image.svelte";
-  import Link from "$lib/components/Link.svelte";
+  import { IconChevronRight } from '@tabler/icons-svelte';
   import PortableText from "$lib/portableText/PortableText.svelte";
+  import { page } from '$app/stores';
 
   export let data;
   const {items} = data
+  const postParentPage = $page.data.post.parentPage;
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full pt-20 pb-32 max-w-content">
@@ -29,8 +31,11 @@
       </div>
       <div class="flex flex-grow flex-col">
         <PortableText data={item.text}/>
-        {#if item.link}
-          <Link link={item.link} />
+        {#if item.internalLink}
+        <a class="font-bold hover:text-blue mt-4 flex items-center gap-1 hover:gap-2 duration-200" href={postParentPage.slug + '/' + item.internalLink.slug}>
+          {item.linkText}
+          <IconChevronRight />
+        </a>
         {/if}
       </div>
     </div>

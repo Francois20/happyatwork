@@ -68,7 +68,7 @@
     <div class="flex flex-col justify-center items-center bg-light h-[380px] w-[380px] rounded-full">
       <IconMailForward size={82} stroke={1.3} color="#fac600"/>
       <p class="font-bold text-3xl uppercase">{confirmationTitle}</p>
-      <p>{confirmationText}</p>
+      <p class="px-5 text-center">{confirmationText}</p>
     </div>
   </div>
   {/if}
