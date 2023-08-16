@@ -2,7 +2,10 @@
 	import { onMount } from "svelte";
 	import PortableText from "$lib/portableText/PortableText.svelte";
   export let data;
-  const {formId, title, text} = data
+
+  $: formId = data.formId
+  $: title = data.title
+  $: text = data.text
 
   onMount(() => {
     const script = document.createElement("script");

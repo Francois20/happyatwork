@@ -5,6 +5,9 @@
 	import FilterTabs from "../components/FilterTabs.svelte"
 
   export let data, posts
+
+  $: postLink = data.postLink
+
   const lang = $page.data.page.__i18n_lang
   const pageName = $page.params.page
 
@@ -52,7 +55,7 @@
       <span class="font-bold text-2xl mt-2 mb-4">{post.title}</span>
       <span>{post.summary}</span>
       <a href={pageName + '/' + post.seo.slug.current} class="hover:text-blue font-semibold  mt-4 flex items-center gap-1 hover:gap-2 duration-200">
-        {data.postLink}
+        {postLink}
         <IconChevronRight  />
       </a>
     </div>

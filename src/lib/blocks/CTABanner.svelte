@@ -4,7 +4,9 @@
 	import Button from "../components/Button.svelte";
 
   export let data;
-  const {text1, text2, link} = data;
+  $: text1 = data.text1
+  $: text2 = data.text2
+  $: link = data.link
 </script>
 
 <section class="w-full flex justify-center px-sm-padding md:px-md-padding lg:px-0 my-4 md:my-16">

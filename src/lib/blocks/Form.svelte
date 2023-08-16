@@ -4,7 +4,15 @@
   import axios from 'axios';
   export let data;
 
-  const {title, text, nameLabel, emailLabel, messageLabel, submitText, confirmationTitle, confirmationText} = data
+  $: text = data.text
+  $: title = data.title
+  $: nameLabel = data.nameLabel
+  $: emailLabel = data.emailLabel
+  $: messageLabel = data.messageLabel
+  $: submitText = data.submitText
+  $: confirmationTitle = data.confirmationTitle
+  $: confirmationText = data.confirmationText
+
   let name = ''
   let email = ''
   let message = ''

@@ -4,7 +4,12 @@
   import Link from "$lib/components/Link.svelte";
 
   export let data;
-  const {title, text, image, paragraphs, tag, reversed} = data;
+  $: title = data.title
+  $: image = data.image
+  $: text = data.text
+  $: paragraphs = data.paragraphs
+  $: reversed = data.reversed
+  $: tag = data.tag
 
 </script>
 

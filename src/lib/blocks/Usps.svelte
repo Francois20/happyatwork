@@ -1,12 +1,13 @@
 <script>
   import Image from "../components/Image.svelte";
   export let data;
+  $: items = data.items
 
 </script>
 
 <section class="flex justify-center w-full py-20 lg:py-32 bg-marine my-12">
   <div class="max-w-content flex flex-col md:grid md:grid-cols-3 gap-12 lg:gap-[5%] px-sm-padding md:px-md-padding xl:px-lg-padding">
-    {#each data.items as item}
+    {#each items as item}
       <div class="flex flex-col relative text-center">
         <div class="flex mb-4 lg:mb-8">
           <Image 

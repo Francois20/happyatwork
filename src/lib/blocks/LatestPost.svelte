@@ -4,8 +4,16 @@
   import { IconChevronRight } from '@tabler/icons-svelte';
 
   export let data, post;
-  const {title, publishedAt, seo, category, author, image, summary} = post;
-  const {linkText, labelText} = data;
+  
+  $: title = post.title
+  $: publishedAt = post.publishedAt
+  $: seo = post.seo
+  $: category = post.category
+  $: author = post.author
+  $: image = post.image
+  $: summary = post.summary
+  $: linkText = data.linkText
+  $: labelText = data.labelText
 
   const lang = $page.data.page.__i18n_lang
 

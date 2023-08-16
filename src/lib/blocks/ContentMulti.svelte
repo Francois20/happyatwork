@@ -4,11 +4,12 @@
 	import PortableText from "$lib/portableText/PortableText.svelte";
 
   export let data;
+  $: items = data.items
  
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding py-8 md:py-16 w-full max-w-content">
-  {#each data.items as item, i}
+  {#each items as item, i}
     <div class="flex flex-col mb-16 lg:mb-28 {i % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}">
       <div class="w-full lg:w-2/3 mb-8 lg:mb-0 {i % 2 === 0 ? 'lg:ml-24' : 'lg:mr-24'}">
         {#if item.tag}

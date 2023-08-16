@@ -4,7 +4,9 @@
   import { page } from '$app/stores';
 
   export let data, twoPosts;
-  const {linkText, parentPage, labelText} = data;
+  $: linkText = data.linkText
+  $: parentPage = data.parentPage
+  $: labelText = data.labelText
 
   const lang = $page.data.page.__i18n_lang
 </script>

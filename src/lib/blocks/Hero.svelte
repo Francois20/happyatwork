@@ -3,6 +3,7 @@
 	import Image from "$lib/components/Image.svelte";
 
   export let data;
+  
   $: orientation = data.orientation
   $: heading = data.heading
   $: image = data.image

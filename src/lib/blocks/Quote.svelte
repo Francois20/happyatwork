@@ -1,7 +1,11 @@
 <script>
   import Image from "../components/Image.svelte";
   export let data;
-  const {name, title, company, image, text } = data;
+  $: name = data.name
+  $: title = data.title
+  $: company = data.company
+  $: image = data.image
+  $: text = data.text
 </script>
 
 <section class="bg-marine px-sm-padding md:px-md-padding xl:px-lg-padding w-full flex justify-center">

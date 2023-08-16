@@ -5,7 +5,7 @@
   import { page } from '$app/stores';
 
   export let data;
-  const {items} = data
+  $: items = data.items
   const postParentPage = $page.data.post.parentPage;
 </script>
 

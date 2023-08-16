@@ -5,28 +5,33 @@
   import { page } from '$app/stores'
 
   export let data;
+  const {faqList} = data
+
+  $: title = data.title
+  $: searchPlaceholder = data.searchPlaceholder
+  $: searchButton = data.searchButton
 
   let openFaqIndex = -1
   let topItems = []
   let otherItems = []
-  let filteredItems = [...data.faqList]
-  let filteredByInput = [...data.faqList]
+  let filteredItems = [...faqList]
+  let filteredByInput = [...faqList]
   let activeTab = ''
   let filterInput = ''
   let value
   let numberOfItems = 16
 
   const lang = $page.data.page.__i18n_lang
-  const tags = data.faqList.map(item => item.tags).flat()
+  const tags = faqList.map(item => item.tags).flat()
   const uniqueTags = lang === 'en-us'
     ? [...new Set(tags.map((item) => item.tag.title.en))]
     : [...new Set(tags.map((item) => item.tag.title.sv))]
 
   $: filteredItems = activeTab 
     ? lang === 'en-us'
-      ? data.faqList.filter(x => x.tags.some((tag) => tag.tag.title.en === activeTab))
-      : data.faqList.filter(x => x.tags.some((tag) => tag.tag.title.sv === activeTab))
-    : data.faqList
+      ? faqList.filter(x => x.tags.some((tag) => tag.tag.title.en === activeTab))
+      : faqList.filter(x => x.tags.some((tag) => tag.tag.title.sv === activeTab))
+    : faqList
 
   $: filteredByInput = filterInput.length > 3 ? filteredItems.filter(x => x.question.toLowerCase().includes(filterInput.toLowerCase())) : filteredItems
   
@@ -47,7 +52,7 @@
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full py-12 lg:py-16 max-w-content">
-    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-16">{data.title}</h2>
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-16">{title}</h2>
     <form on:submit|preventDefault={(e) => filterInput = value}>
       <div class="relative w-full md:max-w-[540px] mx-auto mb-12">
         <div class="flex absolute inset-y-0 items-center text-dark left-0 pl-2.5 pointer-events-none">
@@ -55,13 +60,13 @@
         </div>
         <input
           bind:value
-          placeholder={data.searchPlaceholder || ''}
+          placeholder={searchPlaceholder || ''}
           type="text"
           class="block w-full disabled:cursor-not-allowed disabled:opacity-50 pl-11 pr-11 focus:border-blue focus:ring-blue bg-light text-dark border border-dark p-4 sm:text-base rounded-full"
         />
         <div class="flex absolute inset-y-0 items-center right-0 pr-2.5">
           <button class="text-center font-semibold uppercase font focus:outline-none inline-flex items-center justify-center px-6 py-3 text-sm text-light bg-blue hover:bg-green focus:ring-blue rounded-full">
-            {data.searchButton}
+            {searchButton}
           </button>
         </div>
       </div>

@@ -4,7 +4,11 @@
   import PortableText from "$lib/portableText/PortableText.svelte";
 
   export let data;
-  const {heading, text, image, link, tag} = data;
+  $: heading = data.heading
+  $: image = data.image
+  $: text = data.text
+  $: link = data.link
+  $: tag = data.tag
 </script>
 
 <section class="flex flex-col lg:grid lg:grid-cols-2 px-sm-padding md:px-md-padding xl:px-lg-padding py-12 lg:py-24 max-w-content">
