@@ -8,12 +8,12 @@
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full max-w-content py-8">
-    <div class="grid grid-cols-3 gap-y-8 gap-x-4 md:gap-0 md:flex md:justify-between">
+    <div class="grid grid-cols-3 gap-y-8 gap-x-4 md:gap-0 md:flex md:justify-between lg:px-20">
       {#each images as image}
         <Image
-          imageStyle="object-contain h-[40px] w-[80px] md:h-[50] md:w-[100px] xl:h-[60px] xl:w-[140px]"
+          imageStyle="object-contain h-[40px] w-[80px] md:h-[50] md:w-[100px] xl:h-[50px] xl:w-[120px]"
           source={image}
-          width={{ mobile: 180, tablet: 200, desktop: 300 }}
+          width={{ mobile: 180, tablet: 200, desktop: 240 }}
         />
       {/each}
     </div>
