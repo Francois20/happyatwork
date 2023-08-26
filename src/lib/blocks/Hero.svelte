@@ -14,24 +14,24 @@
 </script>
 
 <section
-  class="relative flex justify-center h-[100vh] md:h-[100.5vh] bg-marine w-full px-sm-padding md:px-md-padding xl:px-lg-padding pt-28 md:pt-48 mb-8 lg:mb-32"
+  class="relative flex justify-center h-[78vh] min-h-[600px] md:h-[84vh] bg-marine w-full pt-28 md:pt-48 mb-2 lg:mb-3"
 >
-<div class="max-w-[1800px] flex items-center lg:items-start flex-col-reverse !justify-end lg:justify-between  {orientation === 'right' ? 'lg:flex-row' : 'lg:flex-row-reverse'}">
+<div class="flex w-full max-w-content lg:items-start lg:justify-between px-sm-padding md:px-md-padding xl:px-lg-padding {orientation === 'right' ? 'lg:flex-row' : 'lg:flex-row-reverse'}">
   <div
     style="background: {backgroundColor};"
-    class="min-w-[250px] max-w-[250px] h-[330px] md:min-w-[350px] md:max-w-[350px] md:h-[460px] xl:min-w-[500px] xl:max-w-[500px] xl:h-[650px] rounded-3xl translate-y-[5rem] bottom-0 z-10
+    class="hidden lg:block min-w-[250px] max-w-[250px] h-[330px] md:min-w-[350px] md:max-w-[350px] md:h-[460px] xl:min-w-[400px] xl:max-w-[400px] xl:h-[500px] rounded-3xl translate-y-[0rem] bottom-0 z-10
     {orientation === 'left' ? 'left-4 rotate-[8deg]' : 'xl:right-[2.2rem] rotate-[-8deg] relative'}"
   >
     <Image 
       style="absolute bottom-0 md:h-auto w-max left-1/2 transform -translate-x-1/2"
-      imageStyle="h-[330px] md:h-[460px] xl:h-[650px] w-full"
+      imageStyle="h-[330px] md:h-[460px] xl:h-[500px] w-full"
       source={image}
       width={{ mobile: 340, tablet: 500, desktop: 1400 }}
     />
   </div>
 
-  <div class="flex flex-col md:max-w-[600px] xl:max-w-[760px] {orientation === 'right' ? 'lg:items-end' : 'lg:items-start'}">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-extrabold text-light uppercase leading-none mb-8 {orientation === 'right' ? 'lg:text-right' : 'lg:text-left'}">
+  <div class="flex flex-col lg:max-w-[600px] xl:max-w-[760px] {orientation === 'right' ? 'lg:items-end' : 'lg:items-start'}">
+    <h1 class="text-3xl md:text-4xl lg:text-4xl xl:text-6xl font-extrabold text-light uppercase leading-none mb-8 {orientation === 'right' ? 'lg:text-right' : 'lg:text-left'}">
      {heading}
     </h1>
   
@@ -52,8 +52,6 @@
     </svg>
   </div>
 </section>
-
-<div class="h-24 w-full md:hidden"/>
 
 
 <style>
