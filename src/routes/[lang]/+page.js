@@ -15,6 +15,8 @@ export async function load({ params }) {
 	const startPage = await client.fetch(getStartPageQuery(lang));
 	const data = await client.fetch(getPageQuery(startPage[0].slug));
 
+	if (!data) throw error(404);
+
 	if (data.pageBuilder.some((x) => x._type === 'latestPost')) {
 		latestPost = await client.fetch(getLatestPostQuery(params.lang));
 	}
@@ -23,15 +25,9 @@ export async function load({ params }) {
 		latestPosts = await client.fetch(getTwoLatestPostsQuery(params.lang));
 	}
 
-	if (data) {
-		return {
-			page: data,
-			latestPost: latestPost,
-			latestPosts: latestPosts
-		};
-	} else {
-		throw error(404, {
-			message: 'Not found'
-		});
-	}
+	return {
+		page: data,
+		latestPost: latestPost,
+		latestPosts: latestPosts
+	};
 }

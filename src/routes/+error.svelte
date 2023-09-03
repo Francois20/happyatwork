@@ -16,8 +16,8 @@
     <p class="text-xl md:text-xl lg:text-2xl font-bold uppercase mb-2 lg:mb-6">{heading}</p>
     <p class="lg:w-2/3">{text}</p>
 
-    <a href="/" class='bg-blue text-light w-max text-sm md:text-base h-10 md:h-14 rounded-full flex items-center justify-center px-8 md:px-12 mt-8 lg:mt-12 uppercase font-semibold tracking-widest'>
+    <button on:click={() => window.location.reload(true)} class='bg-blue text-light w-max text-sm md:text-base h-10 md:h-14 rounded-full flex items-center justify-center px-8 md:px-12 mt-8 lg:mt-12 uppercase font-semibold tracking-widest'>
       {buttonText}
-    </a>
+    </button>
   </div>
 </section>

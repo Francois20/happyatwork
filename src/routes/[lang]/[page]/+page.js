@@ -1,4 +1,5 @@
 import { client } from '../../../sanityClient';
+import { error } from '@sveltejs/kit';
 import {
 	getPostsQuery,
 	getLatestPostQuery,
@@ -12,6 +13,8 @@ export async function load({ params }) {
 	let latestPosts = null;
 
 	const data = await client.fetch(getPageQuery(params.page));
+
+	if (!data) throw error(404);
 
 	if (data.pageBuilder.some((x) => x._type === 'posts')) {
 		posts = await client.fetch(getPostsQuery(params.lang));
@@ -33,8 +36,4 @@ export async function load({ params }) {
 			latestPosts: latestPosts
 		};
 	}
-	return {
-		status: 500,
-		body: new Error('Internal Server Error')
-	};
 }
