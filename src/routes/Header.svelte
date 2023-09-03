@@ -41,7 +41,7 @@
 
 </script>
 
-<header class="flex fixed top-0 left-0 w-full lg:h-24 z-40 md:px-sm-padding pt-2 md:pt-8">
+<header class="flex fixed top-0 left-0 w-full lg:h-24 z-50 md:px-sm-padding pt-2 md:pt-8">
 	<div class="hidden lg:block w-48">
 		<a href="/">
 			<Image 

@@ -1,4 +1,5 @@
 import { client } from '../../sanityClient';
+import { error } from '@sveltejs/kit';
 import {
 	getLatestPostQuery,
 	getTwoLatestPostsQuery,
@@ -28,9 +29,9 @@ export async function load({ params }) {
 			latestPost: latestPost,
 			latestPosts: latestPosts
 		};
+	} else {
+		throw error(404, {
+			message: 'Not found'
+		});
 	}
-	return {
-		status: 500,
-		body: new Error('Internal Server Error')
-	};
 }

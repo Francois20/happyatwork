@@ -1,7 +1,12 @@
-<script lang="ts">
+<script>
+  import { page } from '$app/stores';
 	export let portableText;
+  const blogPage = $page.data.post.parentPage.slug
   
-  const getInternalLink = ({lang, slug}) => {
+  const getInternalLink = ({lang, slug, type}) => {
+    if(type === 'post')
+    return `/${lang}/${blogPage}/${slug}`;
+    else
     return `/${lang}/${slug}`;
     }
 </script>

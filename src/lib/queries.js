@@ -58,7 +58,8 @@ export const getPostQuery = (slug) => {
         item {
           _type == "reference" => {
             "slug": @ -> seo.slug.current,
-            "lang": @ -> __i18n_lang
+            "lang": @ -> __i18n_lang,
+            "type": @ -> _type
   }}}}}[0]`;
 };
 
@@ -158,7 +159,8 @@ export const getPageQuery = (page) => {
               item {
                 _type == "reference" => {
                   "slug": @ -> seo.slug.current,
-                  "lang": @ -> __i18n_lang
+                  "lang": @ -> __i18n_lang,
+                  "type": @ -> _type
                 } 
               }
             }
@@ -195,7 +197,8 @@ export const getPageQuery = (page) => {
               item {
                 _type == "reference" => {
                   "slug": @ -> seo.slug.current,
-                  "lang": @ -> __i18n_lang
+                  "lang": @ -> __i18n_lang,
+                  "type": @ -> _type
                 } 
               }
             }
@@ -220,7 +223,8 @@ export const getPageQuery = (page) => {
             item {
               _type == "reference" => {
                 "slug": @ -> seo.slug.current,
-                "lang": @ -> __i18n_lang
+                "lang": @ -> __i18n_lang,
+                "type": @ -> _type
               } 
             }
           }
@@ -235,7 +239,8 @@ export const getPageQuery = (page) => {
             item {
               _type == "reference" => {
                 "slug": @ -> seo.slug.current,
-                "lang": @ -> __i18n_lang
+                "lang": @ -> __i18n_lang,
+                "type": @ -> _type
               } 
             }
           }
@@ -277,6 +282,7 @@ export const getPageQuery = (page) => {
             item {
               _type == "reference" => {
                 "slug": @ -> seo.slug.current,
-                "lang": @ -> __i18n_lang
+                "lang": @ -> __i18n_lang,
+                "type": @ -> _type
   }}}}}}}[0]`;
 };

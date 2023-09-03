@@ -16,8 +16,7 @@
   let filteredItems = [...faqList]
   let filteredByInput = [...faqList]
   let activeTab = ''
-  let filterInput = ''
-  let value
+  let value = ''
   let numberOfItems = 16
 
   const lang = $page.data.page.__i18n_lang
@@ -32,8 +31,8 @@
       : faqList.filter(x => x.tags.some((tag) => tag.tag.title.sv === activeTab))
     : faqList
 
-  $: filteredByInput = filterInput.length > 3
-    ? filteredItems.filter(x => x.question.toLowerCase().includes(filterInput.toLowerCase()))
+  $: filteredByInput = value.length > 0
+    ? filteredItems.filter(x => x.question.toLowerCase().includes(value.toLowerCase()))
     : filteredItems
   
   $: topItems = filteredByInput.slice(0, 3)
@@ -60,7 +59,6 @@
       </div>
       <input
         bind:value
-        on:keypress={(e) => e.key === 'Enter' ? filterInput = value : ''}
         placeholder={searchPlaceholder || ''}
         type="text"
         class="block w-full disabled:cursor-not-allowed disabled:opacity-50 pl-11 pr-11 focus:border-blue focus:ring-blue bg-light text-dark border border-dark p-4 sm:text-base rounded-full"
@@ -71,7 +69,7 @@
             class="text-center font-semibold uppercase font focus:outline-none inline-flex items-center justify-center px-3 py-3 text-sm text-light bg-blue hover:bg-green focus:ring-blue rounded-full"
             on:click={() => {
               value = ''
-              filterInput = ''
+       
             }}>
             <IconX />
           </button>
@@ -114,7 +112,7 @@
         {#if otherItems.length > 12 && numberOfItems === 16}
           <button class="flex gap-4 items-center" on:click={() => numberOfItems = filteredByInput.length}>
             <IconPlus color="#fac600" size={32} />
-            See all
+            {lang === "en-us" ? 'See all' : 'Visa alla'}
           </button>
         {/if}
        
