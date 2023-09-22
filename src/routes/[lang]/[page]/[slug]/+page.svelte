@@ -3,6 +3,7 @@
   import { afterNavigate } from '$app/navigation';
   import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+  import { urlFor } from "../../../../sanityClient";
 	import PortableText from '$lib/portableText/PortableText.svelte';
 	import TwitterIcon from '$lib/components/TwitterIcon.svelte';
 	import FacebookIcon from '$lib/components/FacebookIcon.svelte';
@@ -37,7 +38,7 @@
   <meta name="description" content="{description}">
   <meta property="og:title" content="{ogTitle}">
   <meta property="og:description" content="{ogDescription}">
-  <meta property="og:image" content="{ogImage}">
+  <meta property="og:image" content="{ogImage ? urlFor(ogImage) : ''}">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91434214-3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
