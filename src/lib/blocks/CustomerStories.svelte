@@ -23,7 +23,7 @@
           <Image
             imageStyle="object-contain w-[160px] lg:w-full h-[40px] lg:h-[36px] z-20"
             source={item.logo}
-            width={{ mobile: 200, tablet: 200, desktop: 240 }}
+            width={{ mobile: 200, tablet: 200, desktop: 260 }}
           />
           <p class="text-3xl font-bold mt-4">{item.name}</p>
           <p>{item.title}</p>
