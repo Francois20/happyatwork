@@ -19,7 +19,7 @@
 <div class="flex w-full max-w-content lg:items-start lg:justify-between px-sm-padding md:px-md-padding xl:px-lg-padding {orientation === 'right' ? 'lg:flex-row' : 'lg:flex-row-reverse'}">
   <div
     style="background: {backgroundColor};"
-    class="hidden lg:block min-w-[250px] max-w-[250px] h-[330px] md:min-w-[350px] md:max-w-[350px] md:h-[460px] xl:min-w-[400px] xl:max-w-[400px] xl:h-[500px] rounded-3xl translate-y-[0rem] bottom-0 z-10
+    class="hidden lg:block min-w-[250px] max-w-[250px] h-[330px] md:min-w-[350px] md:max-w-[350px] md:h-[460px] xl:min-w-[400px] xl:max-w-[400px] xl:h-[60vh] rounded-3xl translate-y-[0rem] bottom-0 z-10
     {orientation === 'left' ? 'left-4 rotate-[8deg]' : 'xl:right-[2.2rem] rotate-[-8deg] relative'}"
   >
     <Image 

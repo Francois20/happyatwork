@@ -34,7 +34,7 @@
         <div class="relative flex flex-col items-center bg-marine rounded-t-3xl px-8 pt-12 pb-6 leading-7 text-light">
           <h3 style="color: {item.color.value};" class="leading-7 text-3xl font-bold uppercase mb-6">{item.title}</h3>
           <p class="text-center mb-10 h-[84px]">{item.description}</p>
-          <span class="font-bold text-4xl lg:text-5xl mb-2">{item.prices.find(x => x.organizationSize.title === currentOrganizationSize).monthlyFee}</span>
+          <span class="font-bold text-4xl mb-2">{item.prices.find(x => x.organizationSize.title === currentOrganizationSize).monthlyFee}</span>
           <span class="font-bold text-lg mb-2 text-center">{titleMonthlyFee}</span>
           <span class="font-bold text-sm">{item.prices.find(x => x.organizationSize.title === currentOrganizationSize).startFee} {titleStartFee}</span>
           <div class="custom-shape-divider-top-1682627523">
