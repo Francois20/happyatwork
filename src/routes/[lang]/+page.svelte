@@ -1,6 +1,6 @@
 <script>
 	import BlockHandler from "$lib/components/BlockHandler.svelte";
-  import { urlFor } from "../sanityClient";
+  import { urlFor } from "../../sanityClient";
   export let data;
   const {title, description, ogTitle, ogDescription, ogImage} = data.page.seo
 
