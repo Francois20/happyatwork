@@ -12,7 +12,7 @@
   <meta name="description" content="{description}">
   <meta property="og:title" content="{ogTitle}">
   <meta property="og:description" content="{ogDescription}">
-  <meta property="og:image" content="{ogImage ? urlFor(ogImage) : ''}">
+  <meta property="og:image" content="{ogImage ? urlFor(ogImage).width(1200).height(630).url() : ''}">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91434214-3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

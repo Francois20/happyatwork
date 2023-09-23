@@ -88,7 +88,7 @@
         />
       </a>
       <button on:click={() => showMobileMenu = !showMobileMenu}>
-        <IconMenu size={40} stroke={1.5} color={!hasHero || isScrolling || showMobileMenu ? "#000000" : "#FFFEFB"}/>
+        <IconMenu size={40} stroke={1.5} color={!hasHero || isScrolling || showMobileMenu ? "#000000" : "#FFFEFA"}/>
       </button>
     </div>
 

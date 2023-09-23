@@ -13,7 +13,7 @@
   export let data;
   const lang = $page.data.page.__i18n_lang
   const {title, description, ogTitle, ogDescription, ogImage} = data.page.seo
-  const {body, category, author, publishedAt, estimatedReadingTime} = data.page;
+  const {body, category, image, author, publishedAt, estimatedReadingTime} = data.page;
   const {estimatedReadTimeText, returnText, shareText} = $page.data.post
   let previousPage = '';
   let facebookUrl = '';
@@ -38,7 +38,7 @@
   <meta name="description" content="{description}">
   <meta property="og:title" content="{ogTitle}">
   <meta property="og:description" content="{ogDescription}">
-  <meta property="og:image" content="{ogImage ? urlFor(ogImage) : ''}">
+  <meta property="og:image" content="{image ? urlFor(image).width(1200).height(630).url() : ''}">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91434214-3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

@@ -48,7 +48,7 @@
 </div>
   <div class="custom-shape-divider-bottom-1688501387">
     <svg class="transform {orientation === 'left' ? 'rotate-y' : ''}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 220" preserveAspectRatio="none">
-      <path d="M1146.85 212.712C592 194.5 0 117.481 0 0V227.284H1544V220.5C1313.81 217.5 1458.33 222.936 1146.85 212.712Z" fill="white"/>
+      <path d="M1146.85 212.712C592 194.5 0 117.481 0 0V227.284H1544V220.5C1313.81 217.5 1458.33 222.936 1146.85 212.712Z" fill="#FFFEFA"/>
     </svg>
   </div>
 </section>
