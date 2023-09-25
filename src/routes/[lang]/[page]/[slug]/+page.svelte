@@ -11,6 +11,8 @@
 	import Author from '$lib/components/Author.svelte';
 
   export let data;
+
+  const parentPage = data.post.parentPage
   const lang = $page.data.page.__i18n_lang
   const {title, description, ogTitle, ogDescription, ogImage} = data.page.seo
   const {body, category, image, author, publishedAt, estimatedReadingTime} = data.page;
@@ -27,7 +29,7 @@
   })
 
   afterNavigate(({from}) => {
-    previousPage = from?.url.pathname
+    previousPage = from?.url.pathname || '/' + parentPage.lang + '/' + parentPage.slug
   })
   
 </script>
@@ -44,7 +46,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-91434214-3');
 </script>
 </svelte:head>

@@ -16,7 +16,7 @@
     <div class="flex flex-col">
       <a 
         href={
-          $page.url.pathname === '/'
+          $page.url.pathname === '/' || $page.url.pathname === '/sv-se'
           ? parentPage.lang + '/' + parentPage.slug + '/' + post.seo.slug.current
           : parentPage.slug + '/' + post.seo.slug.current
         }
@@ -39,7 +39,7 @@
         <p class="leading-7">{post.summary}</p>
         <a 
           href={
-            $page.url.pathname === '/'
+            $page.url.pathname === '/' || $page.url.pathname === '/sv-se'
             ? parentPage.lang + '/' + parentPage.slug + '/' + post.seo.slug.current
             : parentPage.slug + '/' + post.seo.slug.current
           }
