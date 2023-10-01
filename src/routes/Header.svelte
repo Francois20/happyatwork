@@ -43,7 +43,7 @@
 
 <header class="flex fixed top-0 left-0 w-full lg:h-24 z-50 md:px-sm-padding pt-2 md:pt-8">
 	<div class="hidden lg:block w-48">
-		<a href="/">
+		<a href={"/" + $page.params.lang}>
 			<Image 
         source={logo}
         width={{ mobile: 80, tablet: 100, desktop: 200 }}

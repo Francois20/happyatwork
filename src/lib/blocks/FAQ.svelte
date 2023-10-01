@@ -32,11 +32,16 @@
     : faqList
 
   $: filteredByInput = value.length > 0
-    ? filteredItems.filter(x => x.question.toLowerCase().includes(value.toLowerCase()))
+    ? filteredItems.filter(x => x.question.toLowerCase().includes(value.toLowerCase()) || answerText(x.answer).toLowerCase().includes(value.toLowerCase()))
     : filteredItems
   
   $: topItems = filteredByInput.slice(0, 3)
   $: otherItems = filteredByInput.slice(3, numberOfItems)
+
+  const answerText = (answerArray) => {
+    const text = answerArray.map(x => x.children[0].text)
+    return text.join()
+  }
 
   const setOpenFaqIndex = (index) => {
     openFaqIndex === index 
@@ -49,6 +54,8 @@
     ? activeTab = ''
     : activeTab = item
   }
+
+  console.log(filteredItems);
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full py-12 lg:py-16 max-w-content">
