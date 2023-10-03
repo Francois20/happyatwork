@@ -5,7 +5,7 @@
 
   const url = type === 'external'
   ? externalLink
-    : $page.url.pathname === '/' || $page.url.pathname === '/sv-se'
+    : $page.url.pathname === '/' || $page.url.pathname === '/sv-se' || $page.url.pathname === '/en-us'
     ? internalLink.lang + '/' + internalLink.slug
   : internalLink.slug
 </script>
