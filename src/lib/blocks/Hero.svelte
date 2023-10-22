@@ -24,7 +24,7 @@
   >
     <Image 
       style="absolute bottom-0 md:h-auto w-max left-1/2 transform -translate-x-1/2"
-      imageStyle="h-[330px] md:h-[460px] xl:h-[500px] w-full"
+      imageStyle="h-[330px] md:h-[460px] xl:h-[500px]"
       source={image}
       width={{ mobile: 340, tablet: 500, desktop: 1400 }}
     />
