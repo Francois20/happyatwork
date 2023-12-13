@@ -17,7 +17,7 @@ export async function GET() {
         }
       }
     }  
-  }`;
+  }[0]`;
 
 	const settings = await client.fetch(querySettings);
 
