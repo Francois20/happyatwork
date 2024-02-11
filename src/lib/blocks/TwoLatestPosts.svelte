@@ -5,10 +5,11 @@
 
   export let data, twoPosts;
   $: linkText = data.linkText
-  $: parentPage = data.parentPage
   $: labelText = data.labelText
 
   const lang = $page.data.page.__i18n_lang
+  const parentPage = $page.data.post.parentPage
+
 </script>
 
 <section class="md:grid md:grid-cols-2 flex flex-col gap-24 md:gap-16 xl:gap-32 px-sm-padding md:px-md-padding xl:px-lg-padding py-12 md:py-32 max-w-content">
@@ -16,7 +17,7 @@
     <div class="flex flex-col">
       <a 
         href={
-          $page.url.pathname === '/' || $page.url.pathname === '/sv-se'
+          $page.url.pathname === '/' || $page.url.pathname === '/en-us' || $page.url.pathname === '/sv-se'
           ? parentPage.lang + '/' + parentPage.slug + '/' + post.seo.slug.current
           : parentPage.slug + '/' + post.seo.slug.current
         }

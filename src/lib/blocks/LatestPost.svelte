@@ -16,6 +16,7 @@
   $: labelText = data.labelText
 
   const lang = $page.data.page.__i18n_lang
+  const parentPage = $page.data.post.parentPage
 
 </script>
 
@@ -30,13 +31,13 @@
       <span class="text-marine opacity-50 text-sm md:text-lg uppercase font-bold">{lang === 'en-us' ? category.title.en : category.title.sv}</span>
       <span class="font-bold text-4xl mt-4 mb-4">{title}</span>
       <span>{summary}</span>
-      <a href={data.parentPage.slug + '/' + seo.slug.current} class="font-bold hover:text-blue mt-6 flex items-center gap-1 hover:gap-2 duration-200">
+      <a href={parentPage.slug + '/' + seo.slug.current} class="font-bold hover:text-blue mt-6 flex items-center gap-1 hover:gap-2 duration-200">
         {linkText}
         <IconChevronRight />
       </a>
     </div>
 
-    <a href={data.parentPage.slug + '/' + seo.slug.current} class="relative md:w-1/2 group">
+    <a href={parentPage.slug + '/' + seo.slug.current} class="relative md:w-1/2 group">
       <div class="absolute -left-5 -top-8 z-20 bg-blue group-hover:bg-green rounded-full w-20 h-20 md:w-24 md:h-24 text-light flex items-center justify-center">
         <span class="uppercase !leading-5 text-base md:text-lg text-center font-semibold w-min">{labelText}</span>
       </div>
