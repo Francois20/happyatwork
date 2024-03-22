@@ -10,7 +10,7 @@ import {
 export async function load({ params }) {
 	let latestPost = null;
 	let latestPosts = null;
-	const lang = params.lang || 'en-us';
+	const lang = params.lang && params.lang !== 'undefined' ? params.lang : 'en-us';
 
 	const startPage = await client.fetch(getStartPageQuery(lang));
 	const data = await client.fetch(getPageQuery(startPage[0].slug));

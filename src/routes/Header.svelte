@@ -4,12 +4,13 @@
 	import { IconMenu } from '@tabler/icons-svelte';
 	import { onMount } from 'svelte';
 	import Button from '../lib/components/Button.svelte';
+  export const prerender = true;
 
   export let data;
-
-  $: logo = data.logo
-  $: links = data.links
-  $: cta = data.cta
+  // OBS: Properties are undefined on build
+  $: logo = data?.logo
+  $: links = data?.links
+  $: cta = data?.cta
   let isScrolling = false
   let lastScrollTop = 0
   let scrollDown = false
@@ -25,7 +26,7 @@
       scrollDown = true
     } else if (window.scrollY < lastScrollTop) {
       scrollDown = false
-    } 
+    }
     lastScrollTop = window.scrollY <= 0 ? 0 : window.scrollY;
 
     if (window.scrollY > 560) {
@@ -44,7 +45,7 @@
 <header class="flex fixed top-0 left-0 w-full lg:h-24 z-50 md:px-sm-padding pt-2 md:pt-8">
 	<div class="hidden lg:block w-48">
 		<a href={"/" + $page.params.lang}>
-			<Image 
+			<Image
         source={logo}
         width={{ mobile: 80, tablet: 100, desktop: 200 }}
         style={(isScrolling || !hasHero || showMobileMenu) && 'brightness-0'}
@@ -58,7 +59,7 @@
         {#if i !== 0}
           <div class="min-w-px max-w-px w-px h-6 border-r border-dashed {hasHero ? isScrolling ? 'border-marine' : 'border-light' : 'border-marine'}" />
         {/if}
-        <li 
+        <li
           aria-current={link.internalLink && ($page.params.page === link.internalLink?.slug) ? 'page' : undefined}
           class="relative {link.internalLink && ($page.params.page === link.internalLink?.slug) ? 'opacity-50 pointer-events-none' : 'opacity-100'}"
         >
@@ -81,7 +82,7 @@
   <div class="lg:hidden w-full rounded-3xl mx-3 px-3 {!showMobileMenu && !isScrolling ? 'bg-transparent' : 'bg-light shadow-lg'} {!showMobileMenu && scrollDown ? '-translate-y-32' : 'translate-y-0'} duration-500">
     <div class="flex justify-between items-center w-full h-16">
       <a class="w-16" href="/">
-        <Image 
+        <Image
           source={logo}
           width={{ mobile: 80, tablet: 100, desktop: 200 }}
           style={(isScrolling || !hasHero || showMobileMenu) && 'brightness-0'}
