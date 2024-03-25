@@ -11,7 +11,7 @@
 	import Pricing from '$lib/blocks/Pricing.svelte';
 	import CustomerStories from '$lib/blocks/CustomerStories.svelte';
 	import Quote from '$lib/blocks/Quote.svelte';
-	// import FAQ from '$lib/blocks/FAQ.svelte';
+	import FAQ from '$lib/blocks/FAQ.svelte';
 	import Form from '$lib/blocks/Form.svelte';
 	import ContentMulti from '$lib/blocks/ContentMulti.svelte';
 	import FreeText from '$lib/blocks/FreeText.svelte';
@@ -31,7 +31,7 @@
 		pricing: Pricing,
 		customerStories: CustomerStories,
 		quote: Quote,
-		// faq: FAQ,
+		faq: FAQ,
 		form: Form,
 		contentMulti: ContentMulti,
 		freeText: FreeText,

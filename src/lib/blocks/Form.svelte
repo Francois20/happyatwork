@@ -3,6 +3,7 @@
 	import { IconMailForward} from "@tabler/icons-svelte";
   import axios from 'axios';
   export let data;
+  export const prerender = false;
 
   $: text = data.text
   $: title = data.title
@@ -50,7 +51,7 @@
     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 uppercase">{title}</h2>
     <PortableText data={text}/>
   </div>
-  
+
   {#if !sentMessage}
   <form on:submit|preventDefault={sendMessage} class="px-0 md:px-md-padding lg:px-0">
     <div class="w-full md:min-w-[540px] md:rounded-xl shadow-xl bg-marine py-12 px-sm-padding md:px-12">

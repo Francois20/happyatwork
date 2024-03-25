@@ -7,10 +7,10 @@
   export const prerender = true;
 
   export let data;
-  // OBS: Properties are undefined on build
-  $: logo = data?.logo
-  $: links = data?.links
-  $: cta = data?.cta
+
+  $: logo = data.logo
+  $: links = data.links
+  $: cta = data.cta
   let isScrolling = false
   let lastScrollTop = 0
   let scrollDown = false

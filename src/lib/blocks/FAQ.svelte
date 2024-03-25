@@ -25,7 +25,7 @@
     ? [...new Set(tags.map((item) => item.tag.title.en))]
     : [...new Set(tags.map((item) => item.tag.title.sv))]
 
-  $: filteredItems = activeTab 
+  $: filteredItems = activeTab
     ? lang === 'en-us'
       ? faqList.filter(x => x.tags.some((tag) => tag.tag.title.en === activeTab))
       : faqList.filter(x => x.tags.some((tag) => tag.tag.title.sv === activeTab))
@@ -34,7 +34,7 @@
   $: filteredByInput = value.length > 0
     ? filteredItems.filter(x => x.question.toLowerCase().includes(value.toLowerCase()) || answerText(x.answer).toLowerCase().includes(value.toLowerCase()))
     : filteredItems
-  
+
   $: topItems = filteredByInput.slice(0, 3)
   $: otherItems = filteredByInput.slice(3, numberOfItems)
 
@@ -44,8 +44,8 @@
   }
 
   const setOpenFaqIndex = (index) => {
-    openFaqIndex === index 
-    ? openFaqIndex = -1 
+    openFaqIndex === index
+    ? openFaqIndex = -1
     : openFaqIndex = index
   }
 
@@ -54,8 +54,6 @@
     ? activeTab = ''
     : activeTab = item
   }
-
-  console.log(filteredItems);
 </script>
 
 <section class="px-sm-padding md:px-md-padding xl:px-lg-padding w-full py-12 lg:py-16 max-w-content">
@@ -76,7 +74,7 @@
             class="text-center font-semibold uppercase font focus:outline-none inline-flex items-center justify-center px-3 py-3 text-sm text-light bg-blue hover:bg-green focus:ring-blue rounded-full"
             on:click={() => {
               value = ''
-       
+
             }}>
             <IconX />
           </button>
@@ -115,14 +113,14 @@
             </div>
           </li>
         {/each}
-        
+
         {#if otherItems.length > 12 && numberOfItems === 16}
           <button class="flex gap-4 items-center" on:click={() => numberOfItems = filteredByInput.length}>
             <IconPlus color="#fac600" size={32} />
             {lang === "en-us" ? 'See all' : 'Visa alla'}
           </button>
         {/if}
-       
+
       </ul>
     </div>
 </section>
