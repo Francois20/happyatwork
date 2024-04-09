@@ -14,6 +14,7 @@
 		class="{secondary
 			? 'bg-blue'
 			: 'bg-green'} z-40 text-light text-sm md:text-base h-10 md:h-14 rounded-full flex items-center justify-center px-8 md:px-12 uppercase font-semibold tracking-widest"
+    aria-label={data.title}
 	>
 		{data.title}
 	</button>

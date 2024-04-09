@@ -46,7 +46,7 @@
 
 <header class="flex fixed top-0 left-0 w-full lg:h-24 z-50 md:px-sm-padding pt-2 md:pt-8">
 	<div class="hidden lg:block w-48">
-		<a href={"/" + $page.params.lang} alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"}>
+		<a href={"/" + $page.params.lang} alt={lang === "en-us" ? "Return to Homepage" : "Tillbaka till hemsidan"}>
 			<Image
         source={logo}
         alt="Happy at Work logo"
@@ -85,14 +85,15 @@
 
   <div class="lg:hidden w-full rounded-3xl mx-3 px-3 {!showMobileMenu && !isScrolling ? 'bg-transparent' : 'bg-light shadow-lg'} {!showMobileMenu && scrollDown ? '-translate-y-32' : 'translate-y-0'} duration-500">
     <div class="flex justify-between items-center w-full h-16">
-      <a class="w-16" href="/" alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"}>
+      <a class="w-16" href="/" alt={lang === "en-us" ? "Return to Homepage" : "Tillbaka till hemsidan"}>
         <Image
           source={logo}
+          alt="Happy at Work logo"
           width={{ mobile: 80, tablet: 100, desktop: 200 }}
           style={(isScrolling || !hasHero || showMobileMenu) && 'brightness-0'}
         />
       </a>
-      <button on:click={() => showMobileMenu = !showMobileMenu}>
+      <button on:click={() => showMobileMenu = !showMobileMenu} aria-label="Open or close mobile menu">
         <IconMenu size={40} stroke={1.5} color={!hasHero || isScrolling || showMobileMenu ? "#000000" : "#FFFEFA"}/>
       </button>
     </div>
@@ -113,14 +114,14 @@
             </li>
           {/each}
         </ul>
-        <Button data={cta} secondary style="mb-6"/>
+        <Button data={cta} aria-label="Free trial" secondary style="mb-6"/>
       {/if}
     </nav>
   </div>
 
   <div class="hidden lg:block group">
     <a href={cta.type === 'internal' ? cta.internalLink.lang + '/' + cta.internalLink.slug : cta.externalLink} alt={cta.title}>
-      <button class={` ${isScrolling || !hasHero ? 'text-dark bg-light' : 'text-light bg-marine'} border border-dashed border-blue w-20 h-20 group-hover:bg-green group-hover:text-light group-hover:border-green duration-200 rounded-full flex items-center justify-center`}>
+      <button class={` ${isScrolling || !hasHero ? 'text-dark bg-light' : 'text-light bg-marine'} border border-dashed border-blue w-20 h-20 group-hover:bg-green group-hover:text-light group-hover:border-green duration-200 rounded-full flex items-center justify-center`} aria-label={cta.title}>
         <span class='leading-5 text-base uppercase font-semibold w-32'>
           {cta.title}
         </span>

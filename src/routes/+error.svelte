@@ -6,7 +6,7 @@
 </script>
 
 <section class="bg-light pt-24 lg:pt-52 pb-12 lg:pb-24 flex flex-col lg:flex-row-reverse items-center px-sm-padding md:px-md-padding xl:px-lg-padding">
-  <Image 
+  <Image
     imageStyle="md:w-[500px]"
     source={image}
     width={{ mobile: 280, tablet: 300, desktop: 500 }}
@@ -16,7 +16,7 @@
     <p class="text-xl md:text-xl lg:text-2xl font-bold uppercase mb-2 lg:mb-6">{heading}</p>
     <p class="lg:w-2/3">{text}</p>
 
-    <button on:click={() => window.location.reload(true)} class='bg-blue text-light w-max text-sm md:text-base h-10 md:h-14 rounded-full flex items-center justify-center px-8 md:px-12 mt-8 lg:mt-12 uppercase font-semibold tracking-widest'>
+    <button on:click={() => window.location.reload(true)} class='bg-blue text-light w-max text-sm md:text-base h-10 md:h-14 rounded-full flex items-center justify-center px-8 md:px-12 mt-8 lg:mt-12 uppercase font-semibold tracking-widest' aria-label="Reload button">
       {buttonText}
     </button>
   </div>

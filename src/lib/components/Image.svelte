@@ -1,6 +1,11 @@
 <script>
   import { urlFor } from "../../sanityClient";
-  export let width, height = undefined, source, style = '', imageStyle = '', alt = null;
+  export let width, height = undefined, source, style = '', imageStyle = '', alt = '';
+
+  if(!source.alt){
+    console.log(source, "alt:" + alt)
+  }
+
 </script>
 
 <picture class="flex items-center {style}">
@@ -9,7 +14,7 @@
 			.width(width && width.mobile)
 			.height(height && height.mobile)
 			.url()}
-		alt={source.alt}
+    alt={alt ? alt : source.alt}
 		media="(max-width:425px)"
 	/>
 	<source
@@ -17,10 +22,11 @@
 			.width(width && width.tablet)
 			.height(height && height.tablet)
 			.url()}
-		alt={source.alt}
+    alt={alt ? alt : source.alt}
 		media="(max-width:1023px)"
 	/>
 	<img
+    loading="lazy"
 		src={urlFor(source)
 			.width(width && width.desktop)
 			.height(height && height.desktop)

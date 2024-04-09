@@ -94,6 +94,7 @@
 				</div>
 				<button
 					class="bg-blue text-light text-sm md:text-base h-10 md:h-14 rounded-full flex items-center justify-center px-8 md:px-16 uppercase font-semibold tracking-widest mt-6"
+          aria-label="Submit form button"
 				>
 					{submitText}
 				</button>

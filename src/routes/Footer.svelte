@@ -24,7 +24,7 @@
 
 <footer class="relative z-20 flex flex-col bg-marine py-12 md:pt-16 md:pb-12 w-full px-sm-padding md:px-md-padding xl:px-lg-padding">
   <div class="flex flex-col lg:flex-row justify-between pb-6 lg:pb-36">
-    <a href="/" alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"} class="w-40 md:w-48 mb-6 md:mb-0">
+    <a href="/" alt={lang === "en-us" ? "Return to Homepage" : "Tillbaka till hemsidan"} class="w-40 md:w-48 mb-6 md:mb-0">
       <Image
         source={logo}
         alt="Happy at Work logo"
@@ -81,6 +81,7 @@
         <button
           on:click={() => setLocale(locale.code)}
           class="h-9 w-9 {$page.data.page.__i18n_lang === locale.code ? 'brightness-75' : 'brightness-1 hover:brightness-75'}"
+          aria-label="Change language"
         >
           <a href={'/' + (locale?.code ? locale.code : 'en-us')} alt={(locale?.code ? locale.code : 'en-us')}>
             <Image
