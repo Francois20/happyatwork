@@ -3,7 +3,6 @@
 	import { IconMailForward } from '@tabler/icons-svelte';
 	import axios from 'axios';
 	export let data;
-	export const prerender = false;
 
 	$: text = data.text;
 	$: title = data.title;
