@@ -1,6 +1,6 @@
 <script>
   import { urlFor } from "../../sanityClient";
-  export let width, height = undefined, source, style = '', imageStyle = '';
+  export let width, height = undefined, source, style = '', imageStyle = '', alt = null;
 </script>
 
 <picture class="flex items-center {style}">
@@ -25,7 +25,7 @@
 			.width(width && width.desktop)
 			.height(height && height.desktop)
 			.url()}
-		alt={source.alt}
+		alt={alt ? alt : source.alt}
     class={imageStyle}
 	/>
 </picture>

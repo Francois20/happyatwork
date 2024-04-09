@@ -17,6 +17,7 @@
     <div class="flex flex-col">
       <a
         href={baseURL + '/' + post.seo.slug.current}
+        alt={post.seo.slug.current.replace(/-/, " ")}
         class="flex flex-col relative group"
       >
         <div class="absolute -right-5 -top-8 z-10 bg-blue group-hover:bg-green duration-300 rounded-full w-20 h-20 text-light flex items-center justify-center">
@@ -36,6 +37,7 @@
         <p class="leading-7">{post.summary}</p>
         <a
           href={baseURL + '/' + post.seo.slug.current}
+          alt={post.seo.slug.current.replace(/-/g, " ")}
           class="flex gap-2 font-semibold mt-4 hover:text-blue hover:gap-3 duration-200"
         >
           {linkText}

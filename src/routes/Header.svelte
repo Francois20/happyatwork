@@ -49,6 +49,7 @@
 		<a href={"/" + $page.params.lang} alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"}>
 			<Image
         source={logo}
+        alt="Happy at Work logo"
         width={{ mobile: 80, tablet: 100, desktop: 200 }}
         style={(isScrolling || !hasHero || showMobileMenu) && 'brightness-0'}
       />

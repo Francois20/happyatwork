@@ -27,6 +27,7 @@
     <a href="/" alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"} class="w-40 md:w-48 mb-6 md:mb-0">
       <Image
         source={logo}
+        alt="Happy at Work logo"
         width={{ mobile: 80, tablet: 100, desktop: 200 }}
       />
     </a>
@@ -37,6 +38,7 @@
           <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug} class="w-6 text-left lg:text-right">
             <Image
               source={link.image}
+              alt={link.title}
               width={{ mobile: 24, tablet: 24, desktop: 24 }}
             />
           </a>
