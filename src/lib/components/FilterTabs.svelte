@@ -5,7 +5,7 @@
 <div class="grid grid-cols-2 w-full md:w-unset md:flex md:flex-row md:flex-wrap justify-center gap-4 md:gap-8 font-semibold lg:text-lg mt-8 mb-12 md:mb-24">
   {#each items as item, i}
     {#if i !== 0}
-      <div class="min-w-px max-w-px w-px h-6 border-r border-dashed border-marine hidden md:block" />
+      <li class="min-w-px max-w-px w-px h-6 border-r border-dashed border-marine hidden md:block" />
     {/if}
     <button
       on:click={() => onClick(item)}
