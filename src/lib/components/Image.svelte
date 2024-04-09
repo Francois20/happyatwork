@@ -1,11 +1,6 @@
 <script>
   import { urlFor } from "../../sanityClient";
   export let width, height = undefined, source, style = '', imageStyle = '', alt = '';
-
-  if(!source.alt){
-    console.log(source, "alt:" + alt)
-  }
-
 </script>
 
 <picture class="flex items-center {style}">
