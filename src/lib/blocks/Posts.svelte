@@ -9,7 +9,6 @@
   $: postLink = data.postLink
 
   const lang = $page.data.page.__i18n_lang
-  // const pageName = $page.params.page
 
   posts.shift()
 
