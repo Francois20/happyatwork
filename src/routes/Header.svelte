@@ -21,6 +21,8 @@
     window.addEventListener("scroll", handleScroll);
   })
 
+  const lang = $page.data.page.__i18n_lang
+
   const handleScroll = () => {
     if (window.scrollY > lastScrollTop) {
       scrollDown = true
@@ -44,7 +46,7 @@
 
 <header class="flex fixed top-0 left-0 w-full lg:h-24 z-50 md:px-sm-padding pt-2 md:pt-8">
 	<div class="hidden lg:block w-48">
-		<a href={"/" + $page.params.lang}>
+		<a href={"/" + $page.params.lang} alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"}>
 			<Image
         source={logo}
         width={{ mobile: 80, tablet: 100, desktop: 200 }}
@@ -69,6 +71,7 @@
               ? link.externalLink
               : '/' + link.internalLink.lang + '/' + link.internalLink.slug
             }
+            alt={link.title}
             class={`relative uppercase lg:text-sm xl:text-base ${hasHero ? isScrolling ? 'text-dark' : 'text-light' : 'text-dark'} duration-500 hover:opacity-50 hover:duration-150`}
           >
             {link.title}
@@ -81,7 +84,7 @@
 
   <div class="lg:hidden w-full rounded-3xl mx-3 px-3 {!showMobileMenu && !isScrolling ? 'bg-transparent' : 'bg-light shadow-lg'} {!showMobileMenu && scrollDown ? '-translate-y-32' : 'translate-y-0'} duration-500">
     <div class="flex justify-between items-center w-full h-16">
-      <a class="w-16" href="/">
+      <a class="w-16" href="/" alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"}>
         <Image
           source={logo}
           width={{ mobile: 80, tablet: 100, desktop: 200 }}
@@ -98,7 +101,9 @@
         <ul class="flex flex-col gap-8 rounded-full py-6 px-12">
           {#each links as link}
             <li aria-current={$page.url.pathname === '/' + link.internalLink?.slug ? 'page' : undefined} class="relative">
-              <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
+              <a
+                href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
+                alt={link.title}
                 class='relative uppercase'
                 on:click={() => showMobileMenu = false}
               >
@@ -113,7 +118,7 @@
   </div>
 
   <div class="hidden lg:block group">
-    <a href={cta.type === 'internal' ? cta.internalLink.lang + '/' + cta.internalLink.slug : cta.externalLink}>
+    <a href={cta.type === 'internal' ? cta.internalLink.lang + '/' + cta.internalLink.slug : cta.externalLink} alt={cta.title}>
       <button class={` ${isScrolling || !hasHero ? 'text-dark bg-light' : 'text-light bg-marine'} border border-dashed border-blue w-20 h-20 group-hover:bg-green group-hover:text-light group-hover:border-green duration-200 rounded-full flex items-center justify-center`}>
         <span class='leading-5 text-base uppercase font-semibold w-32'>
           {cta.title}

@@ -9,7 +9,7 @@
 		type === 'external' ? externalLink : '/' + internalLink.lang + '/' + internalLink.slug;
 </script>
 
-<a href={url} class="flex {style}">
+<a href={url} alt={data.title} class="flex {style}">
 	<button
 		class="{secondary
 			? 'bg-blue'

@@ -34,7 +34,7 @@
       <div class="flex flex-grow flex-col">
         <PortableText data={item.text}/>
         {#if item.internalLink}
-        <a class="font-bold hover:text-blue mt-4 flex items-center gap-1 hover:gap-2 duration-200" href={baseURL + '/' + item.internalLink.slug}>
+        <a class="font-bold hover:text-blue mt-4 flex items-center gap-1 hover:gap-2 duration-200" alt={item.internalLink.slug.replace(/-/g, ' ')} href={baseURL + '/' + item.internalLink.slug}>
           {item.linkText}
           <IconChevronRight />
         </a>

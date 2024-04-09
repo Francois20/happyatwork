@@ -31,7 +31,7 @@
   afterNavigate(({from}) => {
     previousPage = from?.url.pathname || '/' + parentPage.lang + '/' + parentPage.slug
   })
-  
+
 </script>
 
 <svelte:head>
@@ -52,7 +52,7 @@
 
 <section class=" bg-light flex w-full lg:w-max ml-0 mr-0 pt-28 pb-12 md:pt-40 lg:pt-52 lg:pb-36">
   <aside class="fixed w-52 top-52 hidden lg:block">
-    <a href={previousPage} class="flex items-center gap-2 font-bold">
+    <a href={previousPage} alt={returnText} class="flex items-center gap-2 font-bold">
       <IconChevronLeft size={16} />
       {returnText}
     </a>
@@ -60,13 +60,13 @@
       <Author {author} {publishedAt} vertical />
       <span class="flex mt-12 mb-12 items-center gap-2">
         <IconClockHour3 size={16}/>
-        {estimatedReadingTime + ' ' + estimatedReadTimeText} 
+        {estimatedReadingTime + ' ' + estimatedReadTimeText}
       </span>
       <span>{shareText}</span>
       <div class="flex gap-2 mt-2">
-        <a href={facebookUrl} target="_blank" rel="noreferrer"><FacebookIcon color="#003553"/></a>
-        <a href={twitterUrl} target="_blank" rel="noreferrer"><TwitterIcon color="#003553" /></a>
-        <a href={linkedInUrl} target="_blank" rel="noreferrer"><LinkedInIcon color="#003553" /></a>
+        <a href={facebookUrl} target="_blank" alt="Facebook link" rel="noreferrer"><FacebookIcon color="#003553"/></a>
+        <a href={twitterUrl} target="_blank" alt="Twitter link" rel="noreferrer"><TwitterIcon color="#003553" /></a>
+        <a href={linkedInUrl} target="_blank" alt="LinkedIn link" rel="noreferrer"><LinkedInIcon color="#003553" /></a>
       </div>
     </div>
   </aside>
@@ -78,11 +78,11 @@
     <PortableText data={body}/>
     <span class="block pt-8 pb-2 lg:hidden">{shareText}</span>
     <div class="flex gap-4 lg:hidden">
-      <a href={facebookUrl} target="_blank" rel="noreferrer"><FacebookIcon color="#003553"/></a>
-      <a href={twitterUrl} target="_blank" rel="noreferrer"><TwitterIcon color="#003553" /></a>
-      <a href={linkedInUrl} target="_blank" rel="noreferrer"><LinkedInIcon color="#003553" /></a>
+      <a href={facebookUrl} target="_blank" alt="Facebook link" rel="noreferrer"><FacebookIcon color="#003553"/></a>
+      <a href={twitterUrl} target="_blank" alt="Twitter link" rel="noreferrer"><TwitterIcon color="#003553" /></a>
+      <a href={linkedInUrl} target="_blank" alt="LinkedIn link" rel="noreferrer"><LinkedInIcon color="#003553" /></a>
     </div>
   </article>
 
-    
+
 </section>

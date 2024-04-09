@@ -14,6 +14,7 @@
 
   delete locales._type
   const localesArray = Object.values(locales)
+  const lang = $page.data.page.__i18n_lang
 
   const setLocale = (lang) => {
     goto(`/${lang}`, { invalidateAll: true })
@@ -23,7 +24,7 @@
 
 <footer class="relative z-20 flex flex-col bg-marine py-12 md:pt-16 md:pb-12 w-full px-sm-padding md:px-md-padding xl:px-lg-padding">
   <div class="flex flex-col lg:flex-row justify-between pb-6 lg:pb-36">
-    <a href="/" class="w-40 md:w-48 mb-6 md:mb-0">
+    <a href="/" alt={lang === "en-us" ? "To Homepage" : "Till hem hemsidan"} class="w-40 md:w-48 mb-6 md:mb-0">
       <Image
         source={logo}
         width={{ mobile: 80, tablet: 100, desktop: 200 }}
@@ -45,8 +46,10 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-4 xl:gap-x-16">
         {#each links as link}
-          <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
-          class="text-left lg:text-right text-light hover:text-blue"
+          <a
+            href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
+            alt={link.title}
+            class="text-left lg:text-right text-light hover:text-blue"
           >
             {link.title}
           </a>
@@ -59,8 +62,10 @@
     <ul class="flex flex-col lg:flex-row gap-4 lg:gap-12">
       {#each secondaryLinks as link}
         <li class="text-sm">
-          <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
-          class="text-light hover:text-blue"
+          <a
+            href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug}
+            alt={link.title}
+            class="text-light hover:text-blue"
           >
             {link.title}
           </a>
@@ -75,7 +80,7 @@
           on:click={() => setLocale(locale.code)}
           class="h-9 w-9 {$page.data.page.__i18n_lang === locale.code ? 'brightness-75' : 'brightness-1 hover:brightness-75'}"
         >
-          <a href={'/' + (locale?.code ? locale.code : 'en-us')}>
+          <a href={'/' + (locale?.code ? locale.code : 'en-us')} alt={(locale?.code ? locale.code : 'en-us')}>
             <Image
               source={locale.image}
               width={{ mobile: 24, tablet: 28, desktop: 28 }}

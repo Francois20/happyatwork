@@ -44,7 +44,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
   {#each filteredPosts as post}
     <div class="flex flex-col">
-      <a href={post.seo.slug.current} class="shadow-xl mb-12 w-full aspect-[5/3] overflow-hidden rounded-3xl">
+      <a href={post.seo.slug.current} alt={post.title} class="shadow-xl mb-12 w-full aspect-[5/3] overflow-hidden rounded-3xl">
         <Image
           imageStyle="relative object-cover h-[240px] w-[380px] hover:scale-105 duration-200"
           source={post.image}
@@ -54,7 +54,7 @@
       <span class="text-marine opacity-50 text-xs md:text-sm uppercase font-bold">{lang === 'en-us' ? post.category.title.en : post.category.title.sv}</span>
       <span class="font-bold text-2xl mt-2 mb-4">{post.title}</span>
       <span>{post.summary}</span>
-      <a href={post.seo.slug.current} class="hover:text-blue font-semibold  mt-4 flex items-center gap-1 hover:gap-2 duration-200">
+      <a href={post.seo.slug.current} alt={post.title} class="hover:text-blue font-semibold  mt-4 flex items-center gap-1 hover:gap-2 duration-200">
         {postLink}
         <IconChevronRight  />
       </a>
