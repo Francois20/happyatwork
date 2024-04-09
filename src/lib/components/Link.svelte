@@ -1,7 +1,7 @@
 <script>
 	import { IconChevronRight } from '@tabler/icons-svelte';
 
-	export let link, alt = null;
+	export let link, alt = '';
 </script>
 
 <a
