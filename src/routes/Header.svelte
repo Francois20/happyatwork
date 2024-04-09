@@ -60,7 +60,7 @@
 		<ul class="flex gap-8 xl:gap-12 items-center rounded-full py-6 px-12 {isScrolling ? 'bg-light shadow-lg' : 'bg-transparent'} {scrollDown ? '-translate-y-32' : 'translate-y-0'} duration-500">
       {#each links as link, i}
         {#if i !== 0}
-          <div class="min-w-px max-w-px w-px h-6 border-r border-dashed {hasHero ? isScrolling ? 'border-marine' : 'border-light' : 'border-marine'}" />
+          <li class="min-w-px max-w-px w-px h-6 border-r border-dashed {hasHero ? isScrolling ? 'border-marine' : 'border-light' : 'border-marine'}" />
         {/if}
         <li
           aria-current={link.internalLink && ($page.params.page === link.internalLink?.slug) ? 'page' : undefined}
