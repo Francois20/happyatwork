@@ -13,7 +13,8 @@
     {#if image}
       <Image
           style="!items-start hidden md:block"
-          imageStyle="relative object-cover rounded-full shadow-xl h-[60px] md:h-[112px] w-[60px] md:min-w-[112px]" 
+          imageStyle="relative object-cover rounded-full shadow-xl h-[60px] md:h-[112px] w-[60px] md:min-w-[112px]"
+          lazyLoading={true}
           source={image}
           width={{ mobile: 200, tablet: 200, desktop: 200 }}
         />

@@ -89,38 +89,43 @@
     />
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-8">
-      <ul class="flex flex-col gap-y-8">
-        {#each topItems as item, i}
-          <li class="shadow-xl rounded-xl bg-light p-6 lg:p-12">
-            <h4 class="font-semibold text-xl mb-2">{item.question}</h4>
-            <PortableText data={item.answer}/>
-          </li>
-        {/each}
-      </ul>
-      <ul class="flex flex-col gap-y-8 mt-12">
-        {#each otherItems as item, i}
-          <li class="cursor-pointer" on:click={() => setOpenFaqIndex('col2'+ i)} on:keydown>
-            <div class="flex justify-between items-start">
-              <h4 class="font-semibold text-xl w-10/12 md:w-5/6 mb-2">{item.question}</h4>
-              {#if openFaqIndex === 'col2' +i}
-                <IconChevronUp color="#fac600" size={32} />
-                {:else}
-                <IconChevronDown color="#fac600" size={32} />
-              {/if}
-            </div>
-            <div class="w-10/12 md:w-5/6 overflow-hidden {openFaqIndex === 'col2'+ i ? 'h-auto' : 'h-0'}">
+      <div>
+        <ul class="flex flex-col gap-y-8 mt-12">
+          {#each topItems as item, i}
+            <li class="shadow-xl rounded-xl bg-light p-6 lg:p-12">
+              <h4 class="font-semibold text-xl mb-2">{item.question}</h4>
               <PortableText data={item.answer}/>
-            </div>
-          </li>
-        {/each}
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <div>
+        <ul class="flex flex-col gap-y-8 mt-12">
+          {#each otherItems as item, i}
+            <li class="cursor-pointer" on:click={() => setOpenFaqIndex('col2'+ i)} on:keydown>
+              <div class="flex justify-between items-start">
+                <h4 class="font-semibold text-xl w-10/12 md:w-5/6 mb-2">{item.question}</h4>
+                {#if openFaqIndex === 'col2' +i}
+                  <IconChevronUp color="#fac600" size={32} />
+                  {:else}
+                  <IconChevronDown color="#fac600" size={32} />
+                {/if}
+              </div>
+              <div class="w-10/12 md:w-5/6 overflow-hidden {openFaqIndex === 'col2'+ i ? 'h-auto' : 'h-0'}">
+                <PortableText data={item.answer}/>
+              </div>
+            </li>
+          {/each}
+        </ul>
 
         {#if otherItems.length > 12 && numberOfItems === 16}
-          <button class="flex gap-4 items-center" on:click={() => numberOfItems = filteredByInput.length}>
+          <button class="flex gap-4 items-center mt-5" on:click={() => numberOfItems = filteredByInput.length}>
             <IconPlus color="#fac600" size={32} />
             {lang === "en-us" ? 'See all' : 'Visa alla'}
           </button>
         {/if}
 
-      </ul>
+      </div>
     </div>
 </section>

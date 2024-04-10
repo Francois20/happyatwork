@@ -26,6 +26,7 @@
         <div class="relative w-full shadow-xl mb-12 md:mb-16 overflow-hidden rounded-3xl">
           <Image
             imageStyle="object-cover h-[240px] w-[500px] md:h-[360px] md:w-[540px] group-hover:scale-105 duration-200"
+            lazyLoading={true}
             source={post.image}
             width={{ mobile: 500, tablet: 300, desktop: 800 }}
           />

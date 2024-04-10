@@ -1,6 +1,6 @@
 <script>
   import { urlFor } from "../../sanityClient";
-  export let width, height = undefined, source, style = '', imageStyle = '', alt = '';
+  export let width, height = undefined, source, style = '', imageStyle = '', alt = '', lazyLoading = false;
 </script>
 
 <picture class="flex items-center {style}">
@@ -9,7 +9,7 @@
 			.width(width && width.mobile)
 			.height(height && height.mobile)
 			.url()}
-    alt={alt ? alt : source.alt}
+    loading={lazyLoading ? "lazy" : "eager"}
 		media="(max-width:425px)"
 	/>
 	<source
@@ -17,11 +17,11 @@
 			.width(width && width.tablet)
 			.height(height && height.tablet)
 			.url()}
-    alt={alt ? alt : source.alt}
+    loading={lazyLoading ? "lazy" : "eager"}
 		media="(max-width:1023px)"
 	/>
 	<img
-    loading="lazy"
+    loading={lazyLoading ? "lazy" : "eager"}
 		src={urlFor(source)
 			.width(width && width.desktop)
 			.height(height && height.desktop)

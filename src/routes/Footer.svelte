@@ -27,6 +27,7 @@
     <a href="/" alt={lang === "en-us" ? "Return to Homepage" : "Tillbaka till hemsidan"} class="w-40 md:w-48 mb-6 md:mb-0">
       <Image
         source={logo}
+        lazyLoading={true}
         alt="Happy at Work logo"
         width={{ mobile: 80, tablet: 100, desktop: 200 }}
       />
@@ -38,6 +39,7 @@
           <a href={link.externalLink ? link.externalLink : '/' + link.internalLink.lang + '/' + link.internalLink.slug} class="w-6 text-left lg:text-right">
             <Image
               source={link.image}
+              lazyLoading={true}
               alt={link.title}
               width={{ mobile: 24, tablet: 24, desktop: 24 }}
             />
@@ -86,6 +88,7 @@
           <a href={'/' + (locale?.code ? locale.code : 'en-us')} alt={(locale?.code ? locale.code : 'en-us')}>
             <Image
               source={locale.image}
+              lazyLoading={true}
               width={{ mobile: 24, tablet: 28, desktop: 28 }}
               style="min-h-[28px] min-w-[28px] h-[28px] w-[28px]"
             />

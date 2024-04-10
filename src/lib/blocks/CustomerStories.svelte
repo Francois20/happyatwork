@@ -18,12 +18,14 @@
       <div class="relative flex flex-col lg:flex-row mb-4 lg:mb-12 items-center lg:items-start">
         <Image
           imageStyle="object-cover h-[260px] w-[260px] md:h-[152px] md:w-[152px] shadow-xl rounded-xl"
+          lazyLoading={true}
           source={item.image}
           width={{ mobile: 400, tablet: 200, desktop: 240 }}
         />
         <div class="flex flex-col mt-8 lg:mt-0 h-full lg:ml-8 justify-end items-center lg:items-start text-center lg:text-left">
           <Image
             imageStyle="object-contain w-[160px] lg:w-full h-[40px] lg:h-[36px] z-20"
+            lazyLoading={true}
             source={item.logo}
             width={{ mobile: 200, tablet: 200, desktop: 260 }}
           />

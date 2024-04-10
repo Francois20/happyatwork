@@ -46,6 +46,7 @@
       <a href={post.seo.slug.current} alt={post.title} class="shadow-xl mb-12 w-full aspect-[5/3] overflow-hidden rounded-3xl">
         <Image
           imageStyle="relative object-cover h-[240px] w-[380px] hover:scale-105 duration-200"
+          lazyLoading={true}
           source={post.image}
           width={{ mobile: 340, tablet: 300, desktop: 600 }}
         />
