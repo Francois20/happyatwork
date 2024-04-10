@@ -7,9 +7,10 @@
     {#if i !== 0}
       <div class="min-w-px max-w-px w-px h-6 border-r border-dashed border-marine hidden md:block" />
     {/if}
-    <button 
+    <button
       on:click={() => onClick(item)}
       class="border border-dashed border-marine rounded-full py-2 md:py-0 md:border-none text-center text-marine md:px-5 hover:opacity-50 uppercase {selectedItem === item && 'opacity-50'}"
+      aria-label="Filter button"
     >
       {item}
     </button>

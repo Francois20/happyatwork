@@ -10,8 +10,9 @@
     {#each items as item}
       <div class="flex flex-col relative text-center">
         <div class="flex mb-4 lg:mb-8">
-          <Image 
+          <Image
             imageStyle="w-[48px] md:w-[60px]"
+            lazyLoading={true}
             source={item.image}
             width={{ mobile: 50, tablet: 100, desktop: 100 }}
           />

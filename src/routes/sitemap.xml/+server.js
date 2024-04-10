@@ -1,4 +1,6 @@
 import sanityClient from '@sanity/client';
+export const prerender = true;
+
 const client = sanityClient({
 	projectId: 'szdcwwtw',
 	dataset: 'production',
@@ -16,7 +18,7 @@ export async function GET() {
           "slug": @ -> seo.slug.current,
         }
       }
-    }  
+    }
   }[0]`;
 
 	const settings = await client.fetch(querySettings);
